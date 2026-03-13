@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'it' }}">
+{%- include head.html -%}
+<body>
+  {% assign lang = page.lang | default: site.lang | default: 'it' %}
+  {% assign t = site.data.testi[lang] %}
+
+  {%- include header.html t=t -%}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {%- include footer.html t=t -%}
+</body>
+</html>

@@ -1,0 +1,54 @@
+<form id="contatti" action="/contatti/invia" method="post">
+    <div id="nome" class="row" >
+        <label>Servizio</label>
+        <select name="nome" 
+                required="true">
+            <option value="">--</option>
+            <option value="">ponteggi</option>
+            <option value="">ragni</option>
+            <option value="">piattaforme</option>
+            <option value="">trasporto materiali</option>
+            <option value="">scarrabili</option>
+            <option value="">progettazione</option>
+        </select>
+    </div>
+    <div id="nome" class="row" >
+        <label>Nominativo</label>
+        <input type="text" 
+               name="nome" 
+               required="true" 
+               placeholder="Nome e cognome">
+    </div>
+    <div id="email" class="row" >
+        <label>E-mail</label>
+        <input type="email" 
+               name="email" 
+               required="true" 
+               placeholder="Indirizzo e-mail">
+    </div>
+    <div id="telefono" class="row" >
+        <label>Telefono</label>
+        <input type="tel" 
+               name="telefono" 
+               required="true" 
+               placeholder="Numero di telefono">
+    </div>
+    <div id="messaggio" class="row" >
+        <label>Messaggio</label>
+        <textarea name="messaggio" 
+                  required="true" 
+                  placeholder="Testo del messaggio"></textarea>
+    </div>
+    <div id="visione" class="row" >
+        <label>&nbsp;</label>
+        <input type="checkbox" name="visione" required="true">
+        <span>Ho preso visione della <a href="/privacy">Privacy Policy</a></span>
+    </div>
+    <div class="row submit">
+        <input type="hidden" name="lang" value="it">
+        <input id="submit" 
+            type="submit" 
+            name="invia il messaggio"
+            value="invia il messaggio">
+    </div>
+</form>    

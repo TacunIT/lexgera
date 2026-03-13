@@ -1,0 +1,100 @@
+it:
+  azienda: "Lexgera"
+  claim: "Motto del sito"
+  overlay: "Fare click sull'immagine per ingrandirla"
+  leggi: "leggi articolo"
+  og_desc: "Descrizione del sito."
+  og_img: "/assets/img/lexgera.jpg"
+  vedi_scheda: "vedi scheda del prodotto"
+  partita_iva: "partita IVA/C.F."
+
+  index:
+    plead: "(please be gentle, I'm still learning..)"
+    placeholder: "Scrivi qui…"
+    h3: "suggerimenti"
+    action: "/api/chat/"
+    submit: "Invia"
+
+  contatti:
+    h2: "contatti"
+    menu: "contatti"
+    indirizzo: "indirizzo"
+    cap: "000000"
+    citta: "Roma"
+    provincia: "RM"
+    nazione: "Italia"
+
+  servizi:
+    h2: "servizi"
+    menu: "servizi"
+    elenco_1: "descrizione del servizio 1"
+    elenco_2: "descrizione del servizio 2"
+    elenco_3: "descrizione del servizio 3"
+    elenco_4: "descrizione del servizio 4"
+
+  menu_index:
+    name: "index"
+    href: "/"
+  menu_home:
+    name: "lexgera"
+    href: "/it/"
+  menu_privacy:
+    name: "privacy"
+    href: "/it/privacy.html"
+  menu_prodotti:
+    name: "servizi"
+    href: "/it/prodotti.html"
+
+  footer:
+    back_to_top: "Torna all'inizio della pagina"
+
+
+en:
+  azienda: "Lexgera"
+  claim: "Site motto"
+  overlay: "Click image to enlarge"
+  leggi: "read article"
+  og_desc: "Website description."
+  og_img: "/assets/img/lexgera.jpg"
+  vedi_scheda: "view product sheet"
+  partita_iva: "VAT/C.F."
+
+  index:
+    plead: "(please be gentle, I'm still learning..)"
+    placeholder: "Write here…"
+    h3: "suggestions"
+    action: "/api/chat/"
+    submit: "Send"
+
+  contatti:
+    h2: "contacts"
+    menu: "contacts"
+    indirizzo: "address"
+    cap: "000000"
+    citta: "Rome"
+    provincia: "RM"
+    nazione: "Italy"
+
+  servizi:
+    h2: "services"
+    menu: "services"
+    elenco_1: "service description 1"
+    elenco_2: "service description 2"
+    elenco_3: "service description 3"
+    elenco_4: "service description 4"
+
+  menu_index:
+    name: "index"
+    href: "/"
+  menu_home:
+    name: "lexgera"
+    href: "/en/"
+  menu_privacy:
+    name: "privacy"
+    href: "/en/privacy.html"
+  menu_prodotti:
+    name: "services"
+    href: "/en/prodotti.html"
+
+  footer:
+    back_to_top: "Back to top"

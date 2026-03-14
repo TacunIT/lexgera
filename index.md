@@ -10,10 +10,11 @@ og_thumb:    "/assets/img/og-thumb.png"
 keyword:     "legge, avvocati"
 excerpt:     "Descrizione breve della pagina"
 ---
-<!--
 {% assign t = site.data.testi[page.lang] %}
 
 {%- include azienda.html t=t -%}
+
+<!--
 {%- include servizi.html t=t -%}
 {%- include contatti.html t=t -%}
 -->

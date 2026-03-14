@@ -1,23 +1,23 @@
-$backgroundColor: #ffffff;
-$bodyColor:       #333333;
-$headerBgColor:   #333333;
-$headerBlack:     #333333;
-$headerHeight:    120px;
-$sectionHeight:   calc(100vh - 120px);
-$sectionVPadding: 40px;
-$asideHeight:     calc(100vh - 120px - (2 * 40px));
-$fontSize:        13pt;
-$phi:             1.6180339887498948482;
-$bluette:         #02b8df;
-$headerColor:     #ffffff;
-$linkColor:       #ffffff;
+
+@import "lexgera";
 
 $bodyFont: "Verdana";
 
-* { margin: 0; padding: 0; 
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
+* {
+                margin: 0;
+               padding: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+A {
+    color: $linkColor;
+    font-weight: bold;
+}
+
+HTML {
+    font-size:    $fontSize;
 }
 
 BODY {
@@ -25,25 +25,90 @@ BODY {
     color:        $bodyColor;
     font-family:  $bodyFont;
     font-style:   normal;
-    font-size:    $fontSize;
-    min-width:    320px;
     text-align:   left;
     width:        100%;
 }
 
+HEADER {
+    background: $headerBgColor;
+    height:     auto;
+    width:      100%;
+    position:   relative;
+}
+
+DIV#logo {
+    display:    block;
+    height:     120px;
+    padding:    1rem;
+    position:   relative;
+}
+DIV#logo IMG {
+    height:  100%;
+}
+
+NAV#menu-header {
+    background: $menuBgColor;
+    text-align: right;
+    padding:    10px;
+}
+
+NAV A {
+    display: inline-block;
+    text-decoration: none;
+}
+NAV A:before {
+    content: '|';
+}
+
+FOOTER {
+    background: $footerBgColor;
+    bottom: 0;
+    height:     $footerHeight;
+    width:      100%;
+    padding:    1rem;
+    position:   absolute;
+    display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+FOOTER DIV.box {
+    height: 100%;
+    width: 50%;
+    display:flex;
+}
+FOOTER DIV.box.contatti {
+    color:  #ffffff;
+    display:flex;
+	flex-direction:column;
+	gap:0.3rem;
+ text-align: left;
+}
+FOOTER DIV.box.contatti H3 {
+    font-size: 1.25rem;
+    color:     #ffffff;
+    display:   block;
+}
+FOOTER DIV.box.menu {
+    display:flex;
+	justify-content:flex-end;
+}
+NAV#menu-footer {
+    text-align: right;
+}
+
+/*
 H1, H2, H3, H4 { font-weight: bold; text-align: left; color: $headerColor; margin: 1rem 0;}
 H1 { font-size: 48pt; }
 H2 { font-size: 32pt; }
 H3 { font-size: 1.25rem; margin-bottom: 0.5rem;}
 
-A { color: $linkColor; font-weight: bold; }
-A:hover { background: #666; color: #fff; }
+
 
 UL {
-   margin: 1rem;        
+   margin: 1rem;
 }
 LI {
-   line-height: 1.5;        
+   line-height: 1.5;
 }
 
 FORM DIV.row {
@@ -79,19 +144,6 @@ LABEL {
     float:       left;
 }
 
-HEADER {
-    background: $headerBgColor;
-    height:     $headerHeight;
-    width:      100%;
-    position:   fixed;
-    z-index:    20;
-    top:        0;
-    left:       0;
-}
-
-HEADER IMG#logo-header {
-    height: 100%;
-}
 HEADER NAV {
     background: #333;
     position:   absolute;
@@ -147,7 +199,7 @@ ASIDE {
     max-height: $asideHeight;
 }
 
-ASIDE H2 { 
+ASIDE H2 {
     color: #fff;
 }
 
@@ -162,7 +214,7 @@ ASIDE IMG {
 }
 
 SECTION#contatti ASIDE {
-    max-height: unset;    
+    max-height: unset;
 }
 SECTION#contatti ASIDE DIV.info {
     margin-top: 2rem;
@@ -192,7 +244,7 @@ SECTION#privacy ASIDE DIV.testo BLOCKQUOTE {
 }
 
 @media only screen and (max-width: 600px) {
-    
+
 HEADER{
     height: 140px;
 }
@@ -250,3 +302,4 @@ ASIDE DIV.contatti DIV#visione LABEL {
     display: none;
 }
 }
+*/

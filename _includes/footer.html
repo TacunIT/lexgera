@@ -1,8 +1,24 @@
 <footer class="site-footer">
-  <div class="box sx">
-    <p>{{ t.footer.back_to_top }}</p>
+  <div class="box contatti">
+      <h3 id="ragione-sociale">
+          {{ site.ragione-sociale }}
+      </h3>
+      <p id="indirizzo-1">
+          {{ t.contatti.indirizzo}}
+      </p>
+      <p id="indirizzo-2">
+          {{ t.contatti.cap}}&nbsp;-&nbsp;
+          {{ t.contatti.provincia}}&nbsp;-&nbsp;
+          {{ t.contatti.nazione}}
+      </p>
+      <p id="iva-cv">
+          <label>{{ t.partita_iva}}</label>{{ site.partita_iva }}
+      </p>
+      <p id="e-mail">
+          <a href="mailto:info-www@tacun.it?Subject=Richiesta informazioni">info-www@tacun.it</a>
+      </p>
   </div>
-  <div class="box dx">
+  <div class="box menu">
     <nav id="menu-footer">
       {%- include menu.html t=t -%}
     </nav>

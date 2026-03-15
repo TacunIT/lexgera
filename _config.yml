@@ -1,5 +1,5 @@
 baseurl:        ""
-destination:    "www/"
+destination:    "docs/"
 email:          "info@lexgera.it"
 highlighter:     none
 ragione-sociale: "Lexgera ..."

@@ -3,8 +3,8 @@
 @import url('bevellier.css');
 
 :root{
-    --header-height: 140px;
-    --footer-height: 260px;
+    --header-height: 160px;
+    --footer-height: 280px;
 }
 
 * {
@@ -39,60 +39,71 @@ BODY {
 
 HEADER {
     background: $headerBgColor;
-    height:     140px;
+    height:     auto;
     width:      100%;
     position:   relative;
 }
 
 DIV#logo {
     display:    block;
-    height:     100px;
+    height:     120px;
     padding:    10px 1rem;
     position:   relative;
+    border-bottom: solid 1px #ffffff;
 }
 DIV#logo IMG {
-    height:  80px;
+    height: 100px;
 }
 
 NAV#menu-header {
-    background: $menuBgColor;
-    text-align: right;
-    height:     40px;
+    background:     $menuBgColor;
+    text-align:     right;
+    height:         50px;
+    padding-right:  1rem;
 }
 NAV#menu-header A {
-    padding: 0 10px;
-    text-align: center;
-    line-height:     40px;
+    padding:     0 10px;
+    text-align:  center;
+    line-height: 50px;
 }
 
 MAIN {
     background: $lilla;
 }
-/* Sezione alta: social */
+
+FOOTER {
+    background: $footerBgColor;
+    height: 300px;
+    display: flex;
+    flex-direction: column; /* .alta sopra, .bassa sotto */
+}
+/* Barra alta: social */
 footer .alta {
     background: $neutro;
     padding: 0.5rem 2rem;
     display: flex;
-    justify-content: flex-end; /* centra i social */
-    align-items: center;     /* centra verticalmente */
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px; /* altezza barra alta */
 }
 
 /* Sezione bassa: contatti + menu */
 footer .bassa {
-    background: $footerBgColor;
-    width: 100%;
-    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between; /* contatti a sx, menu a dx */
-    align-items: center;
-    box-sizing: border-box;
+    align-items: stretch;           /* ← stretch allunga le box */
+    flex: 1;                        /* occupa il resto dello spazio del footer */
 }
 
-/* Box generici */
-footer .box {
-    height: 100%;
+/* Box interne: contatti e menu */
+footer .bassa .box {
+    padding: 1rem 2rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra il contenuto verticalmente dentro la box */
+    height: 100%;            /* ora si allunga grazie ad align-items: stretch */
 }
+
 
 /* Box contatti */
 footer .box.contatti {
@@ -100,6 +111,7 @@ footer .box.contatti {
     flex-direction: column;
     gap: 0.3rem;
     text-align: left;
+    justify-content: center;
 }
 
 /* Titolo contatti */
@@ -111,8 +123,9 @@ footer .box.contatti h3 {
 
 /* Box menu */
 footer .box.menu {
-    justify-content: flex-end; /* spinge a destra */
-    align-items: center;       /* centra verticalmente */
+    align-items: center;
+    background: $indaco;
+    justify-content: center;
 }
 
 /* Menu interno */
@@ -199,12 +212,7 @@ nav#menu-social {
 }
 
 MAIN {
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
-}
-
-MAIN SECTION {
-    margin: 1rem 0;
-    min-height: 200px;
+    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
 }
 
 SECTION:nth-of-type(odd){
@@ -213,235 +221,81 @@ SECTION:nth-of-type(odd){
 
 SECTION:nth-of-type(even){
 	background-color:  $neutro;
+    height: calc(100vh);
 }
 
-#azienda{
-	display:flex;
-	align-items:center;
-}
-
-#azienda .immagine{
-    flex:0 0 38.2%;
-}
-
-#azienda .testo{
-    flex:0 0 61.8%;
-}
-
-#azienda {
+SECTION {
     width: 100%;
-    height: calc(100vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     padding: 0 2rem;
+    height: calc(100vh);
 }
 
-/*
-H1, H2, H3, H4 { font-weight: bold; text-align: left; color: $headerColor; margin: 1rem 0;}
-H1 { font-size: 48pt; }
-H2 { font-size: 32pt; }
-H3 { font-size: 1.25rem; margin-bottom: 0.5rem;}
-
-
-
-UL {
-   margin: 1rem;
+SECTION H2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
-LI {
-   line-height: 1.5;
-}
-
-FORM DIV.row {
-    padding: 4px 0;
-}
-FORM DIV.submit {
+SECTION DIV.testo {
+    flex:0 0 61.8%;
+    height: 60%;
     text-align: center;
-  padding: 10px;
-}
-INPUT, LABEL, TEXTAREA, SELECT {
-    font-size: $fontSize;
-    padding:   4px;
-}
-INPUT, TEXTAREA {
-    width: 300px;
-}
-TEXTAREA {
-    height: 3rem;
-}
-INPUT[type=checkbox] {
-    width: unset;
-}
-INPUT[type=submit] {
-    width: unset;
-    background: #333;
-    color: #fff;
-    padding: 8px;
-}
-LABEL {
-    display:     inline-block;
-    font-weight: bold;
-    min-width:   8rem;
-    float:       left;
-}
-
-HEADER NAV {
-    background: #333;
-    position:   absolute;
-    right:      20px;
-    bottom:     20px;
-}
-HEADER NAV A {
-    color: #fff;
-    font-size:  $fontSize;
-    padding:    10px;
-    text-decoration: none;
-}
-
-MAIN {
-    margin-top: $headerHeight;
-    position:   relative;
-}
-
-SECTION {
-    scroll-behavior:    smooth;
-    scroll-margin-top:  $headerHeight;
-    background-size:    cover;
-    position:           relative;
-    height:             $sectionHeight;
-    width:              100%;
-    overflow:           initial;
-    padding:            40px 20px;
-    margin:             4px 0;
-}
-SECTION#grupposc {
-    background-image: url('/assets/img/grupposc.jpg');
-}
-SECTION#noleggio {
-    background-image: url('/assets/img/noleggio.jpg');
-}
-SECTION#servizi {
-    background-image: url('/assets/img/servizi.jpg');
-}
-SECTION#contatti {
-    background-image: url('/assets/img/contatti.jpg');
-}
-SECTION#privacy {
-    background-image: url('/assets/img/privacy.jpg');
-}
-ASIDE {
-    background-color: #02b8df;
-    height:     auto;
-    font-size:  14pt;
-    float:      right;
-    padding:    2rem 0 4rem 2rem;
-    position:   relative;
-    width:      37%;
-    max-height: $asideHeight;
-}
-
-ASIDE H2 {
-    color: #fff;
-}
-
-ASIDE DIV.testo {
+    padding: 2rem;
+    background: rgb(214, 189, 255, 0.8);
     text-align: justify;
-    position:   relative;
-    max-width:  32rem;
-    width:      90%;
 }
-ASIDE IMG {
-    display: none;
+SECTION DIV.testo P {
+    margin-bottom: 1rem;
+    opacity: 100%;
 }
 
-SECTION#contatti ASIDE {
-    max-height: unset;
-}
-SECTION#contatti ASIDE DIV.info {
-    margin-top: 2rem;
+
+#sezione-1 {
+    height: calc(100vh - var(--header-height));
+    background-image: url('/assets/img/sezione-1.jpg');
+    background-size: cover;      /* l'immagine riempie tutta la sezione */
+    background-position: center; /* centra l'immagine */
+    background-repeat: no-repeat; /* evita ripetizioni */
 }
 
-SECTION#privacy ASIDE {
-    float: unset;
-    position: relative;
-    margin: auto;
-    padding:    2rem 2rem 4rem 2rem;
-    width: calc(100% / 1.61);
-    overflow:   hidden;
-    height:     100%;
-}
-SECTION#privacy ASIDE DIV.testo {
-    text-align: justify;
-    position:   relative;
-    max-width:  unset;
-    width:      100%;
-    height:     calc(100% - 4rem);
-    overflow:   auto;
-}
-SECTION#privacy ASIDE DIV.testo BLOCKQUOTE {
-    color: #333333;
-    font-weight:bold;
-    margin:1rem 1rem 1rem 3rem;
+/* Sezione principale */
+#sezione-2 {
+    display: flex;
+    justify-content: center; /* centra il wrapper */
+    padding: 2rem 0;
 }
 
-@media only screen and (max-width: 600px) {
+/* Wrapper per limitare la larghezza al rapporto aureo */
+#sezione-2 .wrapper {
+    display: flex;
+    justify-content: space-between; /* spazio tra le div */
+    width: 80%; /* <--- TUTTO il gruppo occupa il rapporto aureo della pagina */
+}
 
-HEADER{
-    height: 140px;
+/* Singole div interne */
+#sezione-2 .wrapper > div {
+    flex: 1;                  /* tutte le div uguali */
+    display: flex;
+    justify-content: center;   /* centra l'immagine */
 }
-HEADER IMG#logo-header {
-    height: 100px;
-    margin: 20px;
-}
-HEADER NAV {
-    background: #333;
-    position:   relative;
-    float: right;
-    top: 8px;
-    text-align: right;
-}
-HEADER NAV A {
-    color: #fff;
-    font-size:  $fontSize;
-    padding:    2px;
-    text-decoration: none;
+
+/* Immagini */
+#sezione-2 img {
+    max-width: 100%;
+    height: auto;
     display: block;
+    object-fit: cover;
 }
-MAIN {
-    margin-top: 140px;
+#sezione-3 {
+    background-image: url('/assets/img/sezione-3.jpg');
+    background-size: cover;      /* l'immagine riempie tutta la sezione */
+    background-position: center; /* centra l'immagine */
+    background-repeat: no-repeat; /* evita ripetizioni */
 }
-SECTION {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: none !important;
-    height:     auto;
+
+#sezione-4 {
+    padding: 0 3rem;
+    height: calc(100vh - var(--footer-height));
 }
-ASIDE {
-    position:   relative;
-    float:      unset;
-    margin:     0;
-    padding:    0px 0px 1rem;
-    width:      100%;
-    max-height: unset;
-}
-ASIDE IMG {
-    display: inline-block;
-    width: 100%;
-}
-ASIDE DIV.testo ,
-ASIDE DIV.contatti {
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-}
-LABEL {
-    display: block;
-    width: 100%;
-}
-ASIDE DIV.contatti DIV#visione LABEL {
-    display: none;
-}
-}
-*/

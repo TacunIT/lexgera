@@ -11,3 +11,7 @@ keyword:     "legge, avvocati"
 excerpt:     "Descrizione breve della pagina"
 ---
 {% assign t = site.data.testi[page.lang] %}
+{%- include sezione-1.html t=t -%}
+{%- include sezione-2.html t=t -%}
+{%- include sezione-3.html t=t -%}
+{%- include sezione-4.html t=t -%}

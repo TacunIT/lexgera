@@ -45,6 +45,24 @@ it:
     name: "servizi"
     href: "/it/prodotti.html"
 
+  sezione_1:
+    h2:     "Titolo sezione uno"
+    testo_1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    testo_2: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+
+  sezione_2:
+    h2:     "Titolo sezione due"
+    testo:  "Testo sezione due"
+
+  sezione_3:
+    h2:      "Titolo sezione tre"
+    testo_1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    testo_2: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+
+  sezione_4:
+    h2:     "Titolo sezione quattro"
+    testo:  "Testo sezione quattro"
+
   footer:
     back_to_top: "Torna all'inizio della pagina"
     seguici:     "seguici"

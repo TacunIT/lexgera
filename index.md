@@ -1,6 +1,6 @@
 ---
 title:       "Lexgera"
-h1:          "Titolo 1"
+h1:          "Lexgera"
 lang:        "it"
 slug:        "index"
 layout:      "pagina"

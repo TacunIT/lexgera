@@ -1,0 +1,49 @@
+% dig lexgera.tacun.it
+
+; <<>> DiG 9.10.6 <<>> lexgera.tacun.it
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7770
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;lexgera.tacun.it.		IN	A
+
+;; ANSWER SECTION:
+lexgera.tacun.it.	300	IN	A	185.199.108.153
+lexgera.tacun.it.	300	IN	A	185.199.111.153
+lexgera.tacun.it.	300	IN	A	185.199.109.153
+lexgera.tacun.it.	300	IN	A	185.199.110.153
+
+;; Query time: 5 msec
+;; SERVER: 1.1.1.1#53(1.1.1.1)
+;; WHEN: Sun Mar 15 10:48:06 CET 2026
+;; MSG SIZE  rcvd: 109
+
+
+%   dig lexgera.tacun.it
+
+; <<>> DiG 9.10.6 <<>> lexgera.tacun.it
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47863
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;lexgera.tacun.it.		IN	A
+
+;; ANSWER SECTION:
+lexgera.tacun.it.	300	IN	CNAME	tacunit.github.io.
+tacunit.github.io.	3600	IN	A	185.199.108.153
+tacunit.github.io.	3600	IN	A	185.199.109.153
+tacunit.github.io.	3600	IN	A	185.199.110.153
+tacunit.github.io.	3600	IN	A	185.199.111.153
+
+;; Query time: 32 msec
+;; SERVER: 1.1.1.1#53(1.1.1.1)
+;; WHEN: Sun Mar 15 10:55:10 CET 2026
+;; MSG SIZE  rcvd: 140

@@ -15,6 +15,15 @@
             box-sizing: border-box;
 }
 
+H2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+H3{
+    font-size: 1.5rem;
+    margin:    1rem 0 0.5rem;
+}
+
 A {
     color: $linkColor;
     font-weight: bold;
@@ -24,6 +33,9 @@ NAV A {
     text-decoration: none;
 }
 
+BLOCKQUOTE {
+    padding: 1rem;
+}
 HTML {
     font-size:    $fontSize;
 }
@@ -42,6 +54,11 @@ HEADER {
     height:     auto;
     width:      100%;
     position:   relative;
+}
+HEADER H1 {
+    float:       right;
+    color:       $headerColor;
+    line-height: 100px;
 }
 
 DIV#logo {
@@ -68,7 +85,8 @@ NAV#menu-header A {
 }
 
 MAIN {
-    background: $lilla;
+    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+    text-align: center;
 }
 
 FOOTER {
@@ -119,6 +137,7 @@ footer .box.contatti h3 {
     font-size: 1.25rem;
     color: #ffffff;
     display: block;
+    margin: 0;
 }
 
 /* Box menu */
@@ -211,20 +230,16 @@ nav#menu-social {
     }
 }
 
-MAIN {
-    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
-}
-
-SECTION:nth-of-type(odd){
+MAIN.index SECTION:nth-of-type(odd){
 	background-color:  #ffffff;
 }
 
-SECTION:nth-of-type(even){
+MAIN.index SECTION:nth-of-type(even){
 	background-color:  $neutro;
     height: calc(100vh);
 }
 
-SECTION {
+MAIN.index SECTION {
     width: 100%;
     display: flex;
     align-items: center;
@@ -234,68 +249,64 @@ SECTION {
     height: calc(100vh);
 }
 
-SECTION H2{
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-SECTION DIV.testo {
+MAIN.index SECTION DIV.testo {
     flex:0 0 61.8%;
     height: 60%;
-    text-align: center;
     padding: 2rem;
     background: rgb(214, 189, 255, 0.8);
     text-align: justify;
 }
-SECTION DIV.testo P {
+MAIN.index SECTION DIV.testo P {
     margin-bottom: 1rem;
     opacity: 100%;
 }
 
-
 #sezione-1 {
     height: calc(100vh - var(--header-height));
-    background-image: url('/assets/img/sezione-1.jpg');
-    background-size: cover;      /* l'immagine riempie tutta la sezione */
+    background-image:   url('/assets/img/sezione-1.jpg');
+    background-size:     cover;      /* l'immagine riempie tutta la sezione */
     background-position: center; /* centra l'immagine */
-    background-repeat: no-repeat; /* evita ripetizioni */
+    background-repeat:   no-repeat; /* evita ripetizioni */
 }
 
-/* Sezione principale */
 #sezione-2 {
     display: flex;
     justify-content: center; /* centra il wrapper */
     padding: 2rem 0;
 }
-
-/* Wrapper per limitare la larghezza al rapporto aureo */
-#sezione-2 .wrapper {
+.wrapper {
     display: flex;
     justify-content: space-between; /* spazio tra le div */
     width: 80%; /* <--- TUTTO il gruppo occupa il rapporto aureo della pagina */
 }
-
-/* Singole div interne */
-#sezione-2 .wrapper > div {
+.wrapper > div {
     flex: 1;                  /* tutte le div uguali */
     display: flex;
     justify-content: center;   /* centra l'immagine */
 }
-
-/* Immagini */
 #sezione-2 img {
     max-width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
 }
+
 #sezione-3 {
-    background-image: url('/assets/img/sezione-3.jpg');
-    background-size: cover;      /* l'immagine riempie tutta la sezione */
+    height: calc(100vh - var(--header-height));
+    background-image:   url('/assets/img/sezione-3.jpg');
+    background-size:     cover;      /* l'immagine riempie tutta la sezione */
     background-position: center; /* centra l'immagine */
-    background-repeat: no-repeat; /* evita ripetizioni */
+    background-repeat:   no-repeat; /* evita ripetizioni */
 }
 
 #sezione-4 {
     padding: 0 3rem;
     height: calc(100vh - var(--footer-height));
+}
+
+MAIN.servizi SECTION ,
+MAIN.privacy SECTION {
+    width:      61%;
+    margin:     2rem auto 3rem;
+    text-align: justify;
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'it' }}">
+{%- include head.html -%}
+<body id="">
+    {% assign lang = page.lang | default: site.lang | default: 'it' %}
+    {% assign t = site.data.testi[lang] %}
+    <header>
+        <img id="logo-header" src="/assets/img/logo-bianco-verde.svg" alt="{{ t.azienda }}">
+    </header>
+    <main class="{{ page.slug }}">
+        <h1>{{ page.h1 }}</h1>
+        <h2>{{ page.excerpt }}</h2>
+    </main>
+    <footer >
+        <b>Lexgera</b>&nbsp;-&nbsp;{{ t.index.claim }}
+    </footer>
+</body>
+</html>

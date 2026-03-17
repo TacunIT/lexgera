@@ -9,7 +9,9 @@ it:
   partita_iva: "partita IVA/C.F."
 
   index:
-    h2: "Sottotitolo"
+    h2:     "Stiamo costruendo una piattaforma che renderà il diritto più
+    chiaro, veloce e accessibile per la tua impresa"
+    claim:  "Diritto semplice. Digitale. Accessibile."
 
   contatti:
     h2: "contatti"
@@ -33,7 +35,7 @@ it:
 
   menu_1:
     name: "lexgera"
-    href: "/"
+    href: "/lexgera.html"
   menu_2:
     name: "servizi"
     href: "/servizi.html"

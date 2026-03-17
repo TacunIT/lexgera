@@ -298,13 +298,12 @@ MAIN.privacy SECTION {
     text-align: justify;
 }
 
-
 :root {
     --phi: 1.618;
 
     /* suddivisione aurea */
-    --main-h: 61.8dvh;
-    --hf-h: 38.2dvh;
+    --main-h: 61.8vh;
+    --hf-h: 38.2vh;
 
     /* proporzione interna header/footer (2:1) */
     --header-h: calc(var(--hf-h) * 2 / 3);
@@ -366,7 +365,7 @@ BODY#index FOOTER {
     background: #B29AFF;
     height: var(--footer-h);
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: var(--footer-h);
 }
 

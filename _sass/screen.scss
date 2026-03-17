@@ -302,8 +302,8 @@ MAIN.privacy SECTION {
     --phi: 1.618;
 
     /* suddivisione aurea */
-    --main-h: 61.8vh;
-    --hf-h: 38.2vh;
+    --main-h: 61.8dvh;
+    --hf-h: 38.2dvh;
 
     /* proporzione interna header/footer (2:1) */
     --header-h: calc(var(--hf-h) * 2 / 3);
@@ -327,6 +327,7 @@ BODY#index HEADER,
 BODY#index MAIN {
     max-width: 600px;
     margin: auto;
+    padding: 1rem;
 }
 
 /* HEADER */
@@ -343,7 +344,6 @@ BODY#index HEADER IMG {
 /* MAIN (parte aurea dominante) */
 BODY#index MAIN {
     min-height: var(--main-h);
-    padding: 1rem;
 }
 BODY#index MAIN H1 {
     font-size: 2rem;
@@ -365,7 +365,7 @@ BODY#index FOOTER {
     background: #B29AFF;
     height: var(--footer-h);
     display: block;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     line-height: var(--footer-h);
 }
 
@@ -373,7 +373,7 @@ BODY#index FOOTER {
 @media (max-width: 800px) {
     footer .bassa {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.1rem;
         align-items: flex-start;
     }
 

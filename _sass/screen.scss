@@ -96,7 +96,7 @@ FOOTER {
     flex-direction: column; /* .alta sopra, .bassa sotto */
 }
 /* Barra alta: social */
-footer .alta {
+FOOTER .alta {
     background: $neutro;
     padding: 0.5rem 2rem;
     display: flex;
@@ -106,15 +106,15 @@ footer .alta {
 }
 
 /* Sezione bassa: contatti + menu */
-footer .bassa {
+FOOTER .bassa {
     display: flex;
     justify-content: space-between; /* contatti a sx, menu a dx */
     align-items: stretch;           /* ← stretch allunga le box */
-    flex: 1;                        /* occupa il resto dello spazio del footer */
+    flex: 1;                        /* occupa il resto dello spazio del FOOTER */
 }
 
 /* Box interne: contatti e menu */
-footer .bassa .box {
+FOOTER .bassa .box {
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -124,7 +124,7 @@ footer .bassa .box {
 
 
 /* Box contatti */
-footer .box.contatti {
+FOOTER .box.contatti {
     color: #ffffff;
     flex-direction: column;
     gap: 0.3rem;
@@ -133,7 +133,7 @@ footer .box.contatti {
 }
 
 /* Titolo contatti */
-footer .box.contatti h3 {
+FOOTER .box.contatti h3 {
     font-size: 1.25rem;
     color: #ffffff;
     display: block;
@@ -141,14 +141,14 @@ footer .box.contatti h3 {
 }
 
 /* Box menu */
-footer .box.menu {
+FOOTER .box.menu {
     align-items: center;
     background: $indaco;
     justify-content: center;
 }
 
 /* Menu interno */
-nav#menu-footer {
+NAV#menu-footer {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -156,7 +156,7 @@ nav#menu-footer {
 }
 
 /* Menu social */
-nav#menu-social {
+NAV#menu-social {
     display: flex;
     gap: 1rem;
 }
@@ -217,29 +217,16 @@ nav#menu-social {
 #menu-social a.linkedin { background-color: #0a66c2; }
 #menu-social a.twitter  { background-color: #1da1f2; }
 
-/* Responsive semplice */
-@media (max-width: 800px) {
-    footer .bassa {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: flex-start;
-    }
-
-    footer .box.menu {
-        justify-content: flex-start;
-    }
-}
-
-MAIN.index SECTION:nth-of-type(odd){
+MAIN.home SECTION:nth-of-type(odd){
 	background-color:  #ffffff;
 }
 
-MAIN.index SECTION:nth-of-type(even){
+MAIN.home SECTION:nth-of-type(even){
 	background-color:  $neutro;
     height: calc(100vh);
 }
 
-MAIN.index SECTION {
+MAIN.home SECTION {
     width: 100%;
     display: flex;
     align-items: center;
@@ -249,14 +236,14 @@ MAIN.index SECTION {
     height: calc(100vh);
 }
 
-MAIN.index SECTION DIV.testo {
+MAIN.home SECTION DIV.testo {
     flex:0 0 61.8%;
     height: 60%;
     padding: 2rem;
     background: rgb(214, 189, 255, 0.8);
     text-align: justify;
 }
-MAIN.index SECTION DIV.testo P {
+MAIN.home SECTION DIV.testo P {
     margin-bottom: 1rem;
     opacity: 100%;
 }
@@ -309,4 +296,89 @@ MAIN.privacy SECTION {
     width:      61%;
     margin:     2rem auto 3rem;
     text-align: justify;
+}
+
+
+:root {
+    --phi: 1.618;
+
+    /* suddivisione aurea */
+    --main-h: 61.8dvh;
+    --hf-h: 38.2dvh;
+
+    /* proporzione interna header/footer (2:1) */
+    --header-h: calc(var(--hf-h) * 2 / 3);
+    --footer-h: calc(var(--hf-h) * 1 / 3);
+}
+
+BODY#index {
+    background: #8383e5;
+    height: 100dvh;
+    margin: 0;
+}
+
+BODY#index HEADER,
+BODY#index MAIN,
+BODY#index FOOTER {
+    text-align: center;
+    color: #ffffff;
+}
+
+BODY#index HEADER,
+BODY#index MAIN {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* HEADER */
+BODY#index HEADER {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+BODY#index HEADER IMG {
+    height: 100px;
+}
+
+/* MAIN (parte aurea dominante) */
+BODY#index MAIN {
+    min-height: var(--main-h);
+    padding: 1rem;
+}
+BODY#index MAIN H1 {
+    font-size: 2rem;
+}
+BODY#index MAIN H2 {
+    font-size: 1.1rem;
+    margin: 1rem auto;
+}
+BODY#index MAIN H3 {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background: #71CC98;
+    display: inline-block;
+    border-radius: 1rem;
+}
+
+/* FOOTER */
+BODY#index FOOTER {
+    background: #B29AFF;
+    height: var(--footer-h);
+    display: block;
+    font-size: 1.5rem;
+    line-height: var(--footer-h);
+}
+
+/* Responsive semplice */
+@media (max-width: 800px) {
+    footer .bassa {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    footer .box.menu {
+        justify-content: flex-start;
+    }
 }

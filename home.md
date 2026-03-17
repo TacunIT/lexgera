@@ -2,7 +2,7 @@
 title:       "Lexgera"
 h1:          "Lexgera"
 lang:        "it"
-slug:        "index"
+slug:        "home"
 layout:      "pagina"
 permalink:   "/lexgera.html"
 og_image:    "/assets/img/og-image.png"

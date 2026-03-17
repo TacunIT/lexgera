@@ -1,17 +1,13 @@
 ---
 title:       "Lexgera"
-h1:          "Lexgera"
+h1:          "L'alta competenza, accessibile"
 lang:        "it"
 slug:        "index"
-layout:      "pagina"
+layout:      "index"
 permalink:   "/"
 og_image:    "/assets/img/og-image.png"
 og_thumb:    "/assets/img/og-thumb.png"
 keyword:     "legge, avvocati"
-excerpt:     "Descrizione breve della pagina"
+excerpt:     "La piattaforma che rende il diritto più
+chiaro, veloce e accessibile per la tua impresa."
 ---
-{% assign t = site.data.testi[page.lang] %}
-{%- include sezione-1.html t=t -%}
-{%- include sezione-2.html t=t -%}
-{%- include sezione-3.html t=t -%}
-{%- include sezione-4.html t=t -%}

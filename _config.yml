@@ -1,7 +1,7 @@
 baseurl:        ""
 destination:    "docs/"
 fqdn:           "lexgera.it"
-email:          "info@lexgera.it"
+e_mail:          "info@lexgera.it"
 highlighter:     none
 ragione_sociale: "Lexgera ..."
 telefono:       "+39 "

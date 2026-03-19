@@ -13,7 +13,7 @@
     --hf-h: 38.2dvh;
 
     /* proporzione interna header/footer (2:1) */
-    --header-h: calc(var(--hf-h) * 0.5);
+    --header-h: calc(var(--hf-h) * 1);
     --footer-h: calc(var(--hf-h) * 0.5);
 }
 
@@ -323,14 +323,10 @@ BODY#index FOOTER {
     padding: 1rem;
 }
 
-BODY#index HEADER,
-BODY#index MAIN {
-}
-
 /* HEADER */
 BODY#index HEADER {
     background: #B29AFF;
-    height: var(--header-h);
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,7 +364,7 @@ BODY#index IMG#omino {
     position: absolute;
     bottom: 0;
     left: 10%;
-    height: 200px;
+    height: 180px;
 }
 /* FOOTER */
 BODY#index FOOTER {

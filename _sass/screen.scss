@@ -349,10 +349,11 @@ BODY#index MAIN {
     align-items: center;
 }
 BODY#index MAIN H1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 1;
 }
 BODY#index MAIN H2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 1rem auto;
 }
 BODY#index MAIN H3 {
@@ -361,6 +362,7 @@ BODY#index MAIN H3 {
     background: #71CC98;
     display: inline-block;
     border-radius: 1rem;
+    margin: 0 auto;
 }
 BODY#index IMG#omino {
     position: absolute;
@@ -377,7 +379,10 @@ BODY#index FOOTER {
 }
 
 /* Responsive semplice */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+    BODY#index MAIN {
+        justify-content: flex-start;  /* testo in alto */
+    }
     footer .bassa {
         flex-direction: column;
         gap: 1.1rem;

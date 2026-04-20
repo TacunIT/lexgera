@@ -1,23 +1,29 @@
 it:
-  azienda: "Lexgera"
-  claim: "Motto del sito"
-  overlay: "Fare click sull'immagine per ingrandirla"
-  leggi: "leggi articolo"
-  og_desc: "Descrizione del sito."
-  og_img: "/assets/img/lexgera.jpg"
-  vedi_scheda: "vedi scheda del prodotto"
-  partita_iva: "partita IVA/C.F."
+  azienda:       "Lexgera"
+  claim:         "Con Lexgera hai una consulenza chiara e sempre disponibile per far crescere la tua impresa "
+  overlay:       "Fare click sull'immagine per ingrandirla"
+  leggi:         "leggi articolo"
+  og_desc:       "Descrizione del sito."
+  og_img:        "/assets/img/lexgera.jpg"
+  vedi_scheda:   "vedi scheda del prodotto"
+  s_partita_iva: "Partita IVA/C.F."
+  partita_iva:   "12345678901"
+  s_pec:         "PEC"
+  pec:           "lexgera@legalmail.it"
+  e_mail:        "info@lexgera.it"
+  info_subject:  "Richiesta informazioni"
 
   index:
-    h2:     "Stiamo costruendo una piattaforma che renderà il diritto più
-    chiaro, veloce e accessibile per la tua impresa"
-    claim:  "Diritto semplice. Digitale. Accessibile."
+    card_1:
+      icona:  "/assets/img/card-1.png"
+      titolo: "Consulenza legale e normativa"
+      testo:  "Ti sosteniamo nell'elaborazione, nella gestione e nella revisione di compliance, contratti e adempimenti, fornendoti assistenza legale quando necessario."
 
   contatti:
     h2: "contatti"
     menu: "contatti"
-    indirizzo: "indirizzo"
-    cap: "000000"
+    indirizzo: "Viale Carso, 67"
+    cap: "000195"
     citta: "Roma"
     provincia: "RM"
     nazione: "Italia"

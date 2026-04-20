@@ -1,0 +1,136 @@
+
+@import "lexgera";
+@import url('bevellier.css');
+
+:root{
+
+    --phi: 1.618;
+
+    --header-height: 160px;
+    --footer-height: 280px;
+
+    --main-h: 61.8dvh;
+    --hf-h: 38.2dvh;
+
+    /* proporzione interna header/footer (2:1) */
+    --header-h: calc(var(--hf-h) * 1);
+    --footer-h: calc(var(--hf-h) * 0.5);
+}
+
+.nero {
+    color: #000000 !important;
+}
+
+* {
+                margin: 0;
+               padding: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+H2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+H3{
+    font-size: 1.5rem;
+    margin:    1rem 0 0.5rem;
+}
+
+A {
+    color: $linkColor;
+    font-weight: bold;
+}
+NAV A {
+    display: inline-block;
+    text-decoration: none;
+}
+
+BLOCKQUOTE {
+    padding: 1rem;
+}
+HTML {
+    font-size:    $fontSize;
+}
+
+BODY {
+    background:   $backgroundColor;
+    color:        $bodyColor;
+    font-family:  $bodyFont;
+    font-style:   normal;
+    text-align:   left;
+    width:        100%;
+}
+
+HEADER {
+    background: $headerBgColor;
+    height:     auto;
+    width:      100%;
+    position:   relative;
+}
+
+BODY#index {
+    background: #8383e5;
+    background-image: url('/assets/img/nuvole-desktop.png');
+    height: 100dvh;
+    margin: 0;
+}
+
+BODY#index HEADER,
+BODY#index MAIN,
+BODY#index FOOTER {
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
+    padding: 1rem;
+}
+
+BODY#index HEADER {
+    height: auto;
+    background: transparent;
+}
+
+BODY#index HEADER #logo-header {
+    height: 80px;
+    display: block;
+    margin: 1rem auto;
+}
+BODY#index HEADER DIV#titoli {
+    width: 600px;
+    display: inline-block;
+    margin: 1rem auto;
+}
+BODY#index HEADER H1 {
+    text-transform: uppercase;
+    margin: 1rem auto;
+}
+
+#parlaci {
+    display: inline-block;
+    background: $verde;
+    line-height: 40px;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+#card {
+    max-width: 90%;
+}
+
+#card DIV {
+    background: $neutro;
+    font-size: 1rem;
+    text-align: left;
+}
+#card DIV H3 {
+    font-size: 1.2rem;
+}
+
+
+/* Responsive semplice */
+@media (max-width: 768px) {
+    BODY#index {
+        background-image: url('/assets/img/nuvole-mobile.png');
+    }
+}

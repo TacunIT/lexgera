@@ -10,20 +10,17 @@
             <div id="titoli">
                 <h1>L'alta competenza, <span class="nero">accessibile</span></h1>
                 <div id="claim">
-                    Con Lexgera hai una consulenza chiara e sempre disponibile per far crescere la tua impresa
+                    {{ t.claim }}
                 </div>
             </div>
         </header>
         <main>
             <section id="card-container">
                 <div class="card">
-                    <img src="/assets/img/card-1.png">
-                    <h3>Consulenza legale e normativa</h3>
+                    <img src="{{ t.index.card_1.icona }}">
+                    <h3>{{ t.index.card_1.titolo }}</h3>
                     <p>
-                        Ti sosteniamo nell'elaborazione, nella gestione
-                        e nella revisione di compliance, contratti e
-                        adempimenti, fornendoti assistenza legale
-                        quando necessario.
+                        {{ t.index.card_1.testo }}
                     </p>
                 </div>
                 <div class="card">
@@ -54,39 +51,6 @@
                 <a href="mailto:info@lexgera.it?subject=Richiesta informazioni">Parlaci del tuo business</a>
             </div>
         </main>
-
-        <footer class="site-footer">
-            <div class="alta">
-                <nav id="menu-social">
-                  {%- include menu-social.html t=t -%}
-                </nav>
-            </div>
-            <div class="bassa">
-                <div class="box contatti">
-                  <h3 id="ragione-sociale">
-                      {{ site.ragione_sociale }}
-                  </h3>
-                  <p id="indirizzo-1">
-                      {{ t.contatti.indirizzo}}
-                  </p>
-                  <p id="indirizzo-2">
-                      {{ t.contatti.cap}}&nbsp;-&nbsp;
-                      {{ t.contatti.provincia}}&nbsp;-&nbsp;
-                      {{ t.contatti.nazione}}
-                  </p>
-                  <p id="iva-cv">
-                      <label>{{ t.partita_iva}}</label>{{ site.partita_iva }}
-                  </p>
-                  <p id="e-mail">
-                      <a href="mailto:info-www@tacun.it?Subject=Richiesta informazioni">info-www@tacun.it</a>
-                  </p>
-                </div>
-                <div class="box menu">
-                    <nav id="menu-footer">
-s                    </nav>
-                </div>
-            </div>
-        </footer>
-
+        {%- include footer.html -%}
 </body>
 </html>

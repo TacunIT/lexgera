@@ -1,32 +1,31 @@
 <footer class="site-footer">
     <div class="alta">
-        <nav id="menu-social">
-          {%- include menu-social.html t=t -%}
-        </nav>
+        {%- include menu-social.html -%}
     </div>
     <div class="bassa">
         <div class="box contatti">
           <h3 id="ragione-sociale">
-              {{ site.ragione_sociale }}
+              <img id="logo-footer" src="/assets/img/logo-bianco-verde.svg" alt="{{ t.azienda }}">
           </h3>
           <p id="indirizzo-1">
-              {{ t.contatti.indirizzo}}
-          </p>
-          <p id="indirizzo-2">
-              {{ t.contatti.cap}}&nbsp;-&nbsp;
-              {{ t.contatti.provincia}}&nbsp;-&nbsp;
+              {{ t.contatti.indirizzo}} &nbsp;-&nbsp;
+              {{ t.contatti.cap}}       &nbsp;-&nbsp;
+              {{ t.contatti.citta }} ({{ t.contatti.provincia}}) &nbsp;-&nbsp;
               {{ t.contatti.nazione}}
           </p>
           <p id="iva-cv">
-              <label>{{ t.partita_iva}}</label>{{ site.partita_iva }}
+              <label>{{ t.s_partita_iva}}</label>{{ t.partita_iva }}
+          </p>
+          <p id="pec">
+               <label>{{ t.s_pec}}</label>{{ t.pec }}
           </p>
           <p id="e-mail">
-              <a href="mailto:info-www@tacun.it?Subject=Richiesta informazioni">info-www@tacun.it</a>
+              <a href="mailto:{{ t.e_mail}}?Subject={{ t.info_subject}}">{{ t.e_mail}}</a>
           </p>
         </div>
         <div class="box menu">
             <nav id="menu-footer">
-              {%- include menu.html t=t -%}
+                <a href="">Privacy e cookie policy</a>
             </nav>
         </div>
     </div>

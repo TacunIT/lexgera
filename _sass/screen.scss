@@ -42,6 +42,13 @@ A {
     color: $linkColor;
     font-weight: bold;
 }
+LABEL {
+    font-weight: bold;
+}
+LABEL:after {
+    content: ":";
+    margin-right: 4px;
+}
 NAV A {
     display: inline-block;
     text-decoration: none;
@@ -83,7 +90,7 @@ BODY#index FOOTER {
     text-align: center;
     color: #ffffff;
     margin: auto;
-    padding: 1rem;
+    padding: 30px;
 }
 
 BODY#index HEADER {
@@ -118,7 +125,7 @@ BODY#index HEADER H1 {
     line-height: 40px;
     padding: 10px 30px;
     border-radius: 30px;
-    margin-top: 1rem;
+    margin: 30px auto;
 }
 
 #card-container {
@@ -161,12 +168,62 @@ DIV.card P {
     margin: 0;
 }
 
-BODY#index FOOTER {
-    background: #8383e5;
-    height: var(--footer-h);
-    font-size: 1.5rem;
-    line-height: var(--footer-h);
+#logo-footer {
+    width: 134px;
+    height: 40px;
 }
+
+FOOTER {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    font-size: 14pt;
+}
+
+NAV#menu-social ,
+NAV#menu-footer {
+    float: right;
+}
+
+FOOTER .alta {
+    text-align: left;
+    padding-bottom: 20px;
+}
+/* Sezione bassa: contatti + menu */
+FOOTER .bassa {
+    border-top: solid 1px #B29AFF;
+    display: flex;
+    justify-content: space-between; /* contatti a sx, menu a dx */
+    align-items: stretch;           /* ← stretch allunga le box */
+    flex: 1;                        /* occupa il resto dello spazio del FOOTER */
+}
+/* Box interne: contatti e menu */
+FOOTER .bassa .box {
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra il contenuto verticalmente dentro la box */
+    height: 100%;            /* ora si allunga grazie ad align-items: stretch */
+}
+
+
+/* Box contatti */
+FOOTER .box.contatti {
+    color: #ffffff;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
+    justify-content: center;
+}
+
+/* Titolo contatti */
+FOOTER .box.contatti h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    display: block;
+    margin: 0;
+}
+
 
 
 /* Responsive semplice */

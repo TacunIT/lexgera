@@ -1,0 +1,396 @@
+
+@import "lexgera";
+@import url('bevellier.css');
+
+:root{
+
+    --phi: 1.618;
+
+    --header-height: 160px;
+    --footer-height: 280px;
+
+    --main-h: 61.8dvh;
+    --hf-h: 38.2dvh;
+
+    /* proporzione interna header/footer (2:1) */
+    --header-h: calc(var(--hf-h) * 1);
+    --footer-h: calc(var(--hf-h) * 0.5);
+}
+
+* {
+                margin: 0;
+               padding: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+H2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+H3{
+    font-size: 1.5rem;
+    margin:    1rem 0 0.5rem;
+}
+
+A {
+    color: $linkColor;
+    font-weight: bold;
+}
+NAV A {
+    display: inline-block;
+    text-decoration: none;
+}
+
+BLOCKQUOTE {
+    padding: 1rem;
+}
+HTML {
+    font-size:    $fontSize;
+}
+
+BODY {
+    background:   $backgroundColor;
+    color:        $bodyColor;
+    font-family:  $bodyFont;
+    font-style:   normal;
+    text-align:   left;
+    width:        100%;
+}
+
+HEADER {
+    background: $headerBgColor;
+    height:     auto;
+    width:      100%;
+    position:   relative;
+}
+HEADER H1 {
+    float:       right;
+    color:       $headerColor;
+    line-height: 100px;
+}
+
+DIV#logo {
+    display:    block;
+    height:     120px;
+    padding:    10px 1rem;
+    position:   relative;
+    border-bottom: solid 1px #ffffff;
+}
+DIV#logo IMG {
+    height: 100px;
+}
+
+NAV#menu-header {
+    background:     $menuBgColor;
+    text-align:     right;
+    height:         50px;
+    padding-right:  1rem;
+}
+NAV#menu-header A {
+    padding:     0 10px;
+    text-align:  center;
+    line-height: 50px;
+}
+
+MAIN {
+    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+    text-align: center;
+}
+
+FOOTER {
+    background: $footerBgColor;
+    height: 300px;
+    display: flex;
+    flex-direction: column; /* .alta sopra, .bassa sotto */
+}
+/* Barra alta: social */
+FOOTER .alta {
+    background: $neutro;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px; /* altezza barra alta */
+}
+
+/* Sezione bassa: contatti + menu */
+FOOTER .bassa {
+    display: flex;
+    justify-content: space-between; /* contatti a sx, menu a dx */
+    align-items: stretch;           /* ← stretch allunga le box */
+    flex: 1;                        /* occupa il resto dello spazio del FOOTER */
+}
+
+/* Box interne: contatti e menu */
+FOOTER .bassa .box {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra il contenuto verticalmente dentro la box */
+    height: 100%;            /* ora si allunga grazie ad align-items: stretch */
+}
+
+
+/* Box contatti */
+FOOTER .box.contatti {
+    color: #ffffff;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
+    justify-content: center;
+}
+
+/* Titolo contatti */
+FOOTER .box.contatti h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    display: block;
+    margin: 0;
+}
+
+/* Box menu */
+FOOTER .box.menu {
+    align-items: center;
+    background: $indaco;
+    justify-content: center;
+}
+
+/* Menu interno */
+NAV#menu-footer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: right;
+}
+
+/* Menu social */
+NAV#menu-social {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Stile base per tutti i social */
+#menu-social a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: #555; /* colore di default */
+    border-radius: 50%;      /* cerchio */
+    margin: 0 0.5rem;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover: colore e leggera animazione */
+#menu-social a:hover {
+    transform: scale(1.2);
+}
+
+/* Icone con pseudo-elementi */
+#menu-social a.facebook::before {
+    content: "f";
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#menu-social a.linkedin::before {
+    content: "in";
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#menu-social a.twitter::before {
+    content: "t";
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Colori specifici dei social */
+#menu-social a.facebook { background-color: #1877f2; }
+#menu-social a.linkedin { background-color: #0a66c2; }
+#menu-social a.twitter  { background-color: #1da1f2; }
+
+MAIN.home SECTION:nth-of-type(odd){
+	background-color:  #ffffff;
+}
+
+MAIN.home SECTION:nth-of-type(even){
+	background-color:  $neutro;
+    height: calc(100vh);
+}
+
+MAIN.home SECTION {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    height: calc(100vh);
+}
+
+MAIN.home SECTION DIV.testo {
+    flex:0 0 61.8%;
+    height: 60%;
+    padding: 2rem;
+    background: rgb(214, 189, 255, 0.8);
+    text-align: justify;
+}
+MAIN.home SECTION DIV.testo P {
+    margin-bottom: 1rem;
+    opacity: 100%;
+}
+
+#sezione-1 {
+    height: calc(100vh - var(--header-height));
+    background-image:   url('/assets/img/sezione-1.jpg');
+    background-size:     cover;      /* l'immagine riempie tutta la sezione */
+    background-position: center; /* centra l'immagine */
+    background-repeat:   no-repeat; /* evita ripetizioni */
+}
+
+#sezione-2 {
+    display: flex;
+    justify-content: center; /* centra il wrapper */
+    padding: 2rem 0;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between; /* spazio tra le div */
+    width: 80%; /* <--- TUTTO il gruppo occupa il rapporto aureo della pagina */
+}
+.wrapper > div {
+    flex: 1;                  /* tutte le div uguali */
+    display: flex;
+    justify-content: center;   /* centra l'immagine */
+}
+#sezione-2 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+#sezione-3 {
+    height: calc(100vh - var(--header-height));
+    background-image:   url('/assets/img/sezione-3.jpg');
+    background-size:     cover;      /* l'immagine riempie tutta la sezione */
+    background-position: center; /* centra l'immagine */
+    background-repeat:   no-repeat; /* evita ripetizioni */
+}
+
+#sezione-4 {
+    padding: 0 3rem;
+    height: calc(100vh - var(--footer-height));
+}
+
+MAIN.servizi SECTION ,
+MAIN.privacy SECTION {
+    width:      61%;
+    margin:     2rem auto 3rem;
+    text-align: justify;
+}
+
+BODY#index {
+    background: #8383e5;
+    background-image: url('/assets/img/nuvole-desktop.png');
+    height: 100dvh;
+    margin: 0;
+}
+
+BODY#index HEADER,
+BODY#index MAIN,
+BODY#index FOOTER {
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
+    padding: 1rem;
+}
+
+/* HEADER */
+BODY#index HEADER {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo-header {
+    height: 100px;
+    display: block;
+}
+
+/* MAIN (parte aurea dominante) */
+BODY#index MAIN {
+    min-height: var(--main-h);
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;   /* verticale */
+    align-items: center;
+}
+BODY#index MAIN H1 {
+    font-size: 1.6rem;
+    line-height: 1;
+    display: block;
+}
+BODY#index MAIN H2 {
+    font-size: 1rem;
+    margin: 1rem auto;
+}
+BODY#index MAIN H3 {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background: #71CC98;
+    display: inline-block;
+    border-radius: 1rem;
+    margin: 0 auto;
+}
+BODY#index IMG#omino {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 180px;
+}
+/* FOOTER */
+BODY#index FOOTER {
+    background: #8383e5;
+    height: var(--footer-h);
+    font-size: 1.5rem;
+    line-height: var(--footer-h);
+}
+
+/* Responsive semplice */
+@media (max-width: 768px) {
+    BODY#index {
+        background-image: url('/assets/img/nuvole-mobile.png');
+    }
+    BODY#index MAIN {
+        justify-content: flex-start;  /* testo in alto */
+    }
+    footer .bassa {
+        flex-direction: column;
+        gap: 1.1rem;
+        align-items: flex-start;
+    }
+
+    footer .box.menu {
+        justify-content: flex-start;
+    }
+}

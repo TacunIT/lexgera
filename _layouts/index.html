@@ -5,16 +5,54 @@
 <html lang="{{ page.lang | default: site.lang | default: 'it' }}">
 {%- include head.html -%}
 <body id="index">
-    <header>
-        <img id="logo-header" src="/assets/img/logo-bianco-verde.svg" alt="{{ t.azienda }}">
-    </header>
-    <main>
-        <h1>{{ page.h1 }}</h1>
-        <h2>{{ t.index.h2 }}</h2>
-        <h3>{{ site.e_mail }}</h3>
-    </main>
-    <footer >
-        <img id="omino" src="/assets/img/omino-index.png" alt="{{ t.azienda }}">
-    </footer>
+        <header>
+            <img id="logo-header" src="/assets/img/logo-bianco-verde.svg" alt="{{ t.azienda }}">
+            <div id="titoli">
+                <h1>L'alta competenza, <span class="nero">accessibile</span></h1>
+                <div id="claim">
+                    Con Lexgera hai una consulenza chiara e sempre disponibile
+                    per far crescere la tua impresa senza ostacoli
+                </div>
+            </div>
+        </header>
+        <main>
+
+            <section id="card-container">
+                <div class="card">
+                    <img src="/assets/img/card-1.png">
+                    <h3>Consulenza legale e normativa</h3>
+                    <p>
+                        Ti sosteniamo nell'elaborazione, nella gestione
+                        e nella revisione di compliance, contratti e
+                        adempimenti, fornendoti assistenza legale
+                        quando necessario.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="/assets/img/card-2.png">
+                    <h3>Titolo due</h3>
+                    <p>
+                        Testo due
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="/assets/img/card-3.png">
+                    <h3>Titolo tre</h3>
+                    <p>
+                        Testo tre
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="/assets/img/card-4.png">
+                    <h3>Titolo quattro</h3>
+                    <p>
+                        Testo quattro
+                    </p>
+                </div>
+            </section>
+
+            <div id="parlaci">Parlaci del tuo business</div>
+
+        </main>
 </body>
 </html>

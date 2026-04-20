@@ -91,16 +91,15 @@ BODY#index HEADER {
     background: transparent;
 }
 
-#logo-header {
-    width: 234px;
-    height: 70px;
+BODY#index HEADER #logo-header {
+    height: 80px;
     display: block;
-    margin: 1rem auto 0;
+    margin: 1rem auto;
 }
 BODY#index HEADER DIV#titoli {
     width: 600px;
     display: inline-block;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 BODY#index HEADER H1 {
     text-transform: uppercase;
@@ -113,47 +112,19 @@ BODY#index HEADER H1 {
     line-height: 40px;
     padding: 10px 30px;
     border-radius: 30px;
-    margin-top: 1rem;
 }
 
-#card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+#card {
+    max-width: 90%;
 }
 
-DIV.card {
+#card DIV {
     background: $neutro;
-    color: #000000;
+    font-size: 1rem;
     text-align: left;
-    width: 300px;
-    height: 300px;
-    padding: 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-radius: 10px;
-    gap: 10px;
-    font-size: 0.9rem;
 }
-
-DIV.card IMG {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
-}
-
-DIV.card H3 {
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-DIV.card P {
-    font-size: 0.8rem;
-    margin: 0;
+#card DIV H3 {
+    font-size: 1.2rem;
 }
 
 

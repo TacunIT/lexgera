@@ -10,13 +10,11 @@
             <div id="titoli">
                 <h1>L'alta competenza, <span class="nero">accessibile</span></h1>
                 <div id="claim">
-                    Con Lexgera hai una consulenza chiara e sempre disponibile
-                    per far crescere la tua impresa senza ostacoli
+                    Con Lexgera hai una consulenza chiara e sempre disponibile per far crescere la tua impresa
                 </div>
             </div>
         </header>
         <main>
-
             <section id="card-container">
                 <div class="card">
                     <img src="/assets/img/card-1.png">
@@ -30,29 +28,65 @@
                 </div>
                 <div class="card">
                     <img src="/assets/img/card-2.png">
-                    <h3>Titolo due</h3>
+                    <h3>Affiancamento strategico</h3>
                     <p>
-                        Testo due
+                        Supporto concreto per le decisioni fondamentali, dalle PMI alle start-up.
+                        Affiancamento nella gestione dell’impresa e della sua eventuale crisi.
                     </p>
                 </div>
                 <div class="card">
                     <img src="/assets/img/card-3.png">
-                    <h3>Titolo tre</h3>
+                    <h3>Gestione amministrativa</h3>
                     <p>
-                        Testo tre
+                        Gestiamo pratiche e scadenze, anche di natura fiscale e previdenziale, mentre tu pensi ai tuoi obiettivi.
                     </p>
                 </div>
                 <div class="card">
                     <img src="/assets/img/card-4.png">
-                    <h3>Titolo quattro</h3>
+                    <h3>Gestione rischi tecnologici</h3>
                     <p>
-                        Testo quattro
+                        Assistenza costante per il tuo assetto di cybersecurity, protezione da frodi informatiche, sicurezza e compliance dei digital data.
                     </p>
                 </div>
             </section>
 
-            <div id="parlaci">Parlaci del tuo business</div>
-
+            <div id="parlaci">
+                <a href="mailto:info@lexgera.it?subject=Richiesta informazioni">Parlaci del tuo business</a>
+            </div>
         </main>
+
+        <footer class="site-footer">
+            <div class="alta">
+                <nav id="menu-social">
+                  {%- include menu-social.html t=t -%}
+                </nav>
+            </div>
+            <div class="bassa">
+                <div class="box contatti">
+                  <h3 id="ragione-sociale">
+                      {{ site.ragione_sociale }}
+                  </h3>
+                  <p id="indirizzo-1">
+                      {{ t.contatti.indirizzo}}
+                  </p>
+                  <p id="indirizzo-2">
+                      {{ t.contatti.cap}}&nbsp;-&nbsp;
+                      {{ t.contatti.provincia}}&nbsp;-&nbsp;
+                      {{ t.contatti.nazione}}
+                  </p>
+                  <p id="iva-cv">
+                      <label>{{ t.partita_iva}}</label>{{ site.partita_iva }}
+                  </p>
+                  <p id="e-mail">
+                      <a href="mailto:info-www@tacun.it?Subject=Richiesta informazioni">info-www@tacun.it</a>
+                  </p>
+                </div>
+                <div class="box menu">
+                    <nav id="menu-footer">
+s                    </nav>
+                </div>
+            </div>
+        </footer>
+
 </body>
 </html>

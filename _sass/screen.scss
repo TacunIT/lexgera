@@ -98,15 +98,20 @@ BODY#index HEADER {
     margin: 1rem auto 0;
 }
 BODY#index HEADER DIV#titoli {
-    width: 600px;
+    width: auto;
     display: inline-block;
     margin: 0 auto;
 }
 BODY#index HEADER H1 {
     text-transform: uppercase;
     margin: 1rem auto;
+    line-height: 1.1;
+    font-size: 70px;
 }
-
+#claim {
+    font-size: 24px;
+    line-height: 140%;
+}
 #parlaci {
     display: inline-block;
     background: $verde;
@@ -120,16 +125,16 @@ BODY#index HEADER H1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 DIV.card {
     background: $neutro;
     color: #000000;
     text-align: left;
-    width: 300px;
-    height: 300px;
-    padding: 1rem;
+    width: 337.5px;
+    height: 311px;
+    padding: 25px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -156,10 +161,25 @@ DIV.card P {
     margin: 0;
 }
 
+BODY#index FOOTER {
+    background: #8383e5;
+    height: var(--footer-h);
+    font-size: 1.5rem;
+    line-height: var(--footer-h);
+}
+
 
 /* Responsive semplice */
 @media (max-width: 768px) {
     BODY#index {
         background-image: url('/assets/img/nuvole-mobile.png');
+        font-size: 16pt;
+
+    }
+    BODY#index HEADER DIV#titoli {
+        width: 90%;
+    }
+    BODY#index HEADER H1 {
+        font-size: 1.6rem;
     }
 }

@@ -10,11 +10,13 @@ keyword:     "legge, avvocati, privacy"
 excerpt:     "Politica di protezione dei dati personali"
 ---
 
+{{ t }}
+
 <section id="privacy">
 
     <h2>Privacy</h2>
 
-    Ai sensi del Regolamento (UE) 2016/679 (di seguito “Regolamento”), questa pagina descrive le modalità di trattamento dei dati personali degli utenti che consultano i siti della <b>{{ site.ragione_sociale }}</b>, accessibili per via telematica unicamente ai seguenti indirizzi:
+    Ai sensi del Regolamento (UE) 2016/679 (di seguito “Regolamento”), questa pagina descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito <b>LEXGERA</b>, accessibili per via telematica unicamente ai seguenti indirizzi:
 
         <blockquote>
             <b>{{ site.fqdn }}</b>
@@ -27,11 +29,10 @@ excerpt:     "Politica di protezione dei dati personali"
     Titolare del trattamento è:
 
         <blockquote>
-        {{ site.ragione_sociale }} (di seguito anche “titolare”)<br/>
-        con sede in {{ site.sede  }}<br/>
-        C.F./P.I.   {{ site.cf_pi }}<br/>
-        PEC:        {{ site.pec   }}<br/>
-        Tel.:       {{ site.telefono }}
+        Avv. Cristina Marigliano (di seguito anche “titolare”)<br/>
+        con sede in Viale Carso 67, Roma<br/>
+        PEC: cristinamarigliano@ordineavvocatiroma.org<br/>
+        Telefono:  +39 06 3723461-861
         </blockquote>
 
     <h3>Tipi di dati trattati e finalità del trattamento</h3>
@@ -47,9 +48,7 @@ excerpt:     "Politica di protezione dei dati personali"
 
     <h3>Dati comunicati dall’utente</h3>
 
-    L’invio facoltativo, esplicito e volontario di messaggi tramite la maschera nella sezione
-    <a href="/#contatti">Contatti</a>,
-    comportano l’acquisizione dei dati di contatto del mittente, nonché di tutti i dati personali inclusi nelle comunicazioni.
+    L’invio facoltativo, esplicito e volontario di messaggi tramite il link presente in home-page comporta l’acquisizione dei dati di contatto del mittente, nonché di tutti i dati personali inclusi nelle comunicazioni.
     Tali informazioni, spontaneamente fornite dall’utente, saranno utilizzate unicamente per fornire riscontro alle richieste di quest’ultimo.
 
     <h3>Cookie e altri sistemi di tracciamento</h3>
@@ -62,7 +61,7 @@ excerpt:     "Politica di protezione dei dati personali"
     I dati personali raccolti sono, altresì, trattati dai dipendenti del titolare, i quali agiscono sulla base di specifiche istruzioni fornite in ordine a finalità e modalità del trattamento medesimo.
 
     <h3>Diritti degli interessati</h3>
-    Gli interessati hanno il diritto di ottenere da Gruppo SC, nei casi previsti, l’accesso ai propri dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento che li riguarda o di opporsi al trattamento (artt. 15 e ss. del Regolamento).
+    Gli interessati, nei casi previsti, hanno il diritto di ottenere dal Titolare l’accesso ai propri dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento che li riguarda o di opporsi al trattamento (artt. 15 e ss. del Regolamento).
     L’apposita istanza può essere presentata contattando il titolare ai recapiti indicati nel presente documento.
 
     <h3>Diritto di reclamo</h3>

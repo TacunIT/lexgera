@@ -2,8 +2,6 @@
 <html lang="{{ page.lang | default: site.lang | default: 'it' }}">
 {%- include head.html -%}
 <body id="">
-  {% assign lang = page.lang | default: site.lang | default: 'it' %}
-  {% assign t = site.data.testi[lang] %}
   {%- include header.html t=t -%}
   <main class="{{ page.slug }}">
     {{ content }}

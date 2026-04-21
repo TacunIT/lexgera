@@ -37,7 +37,9 @@ it:
     elenco_4: "descrizione del servizio 4"
 
   privacy:
-    h2: "Privacy"
+    href:  "/privacy.html"
+    label: "Privacy e cookie policy"
+    h2:    "Privacy"
 
   menu_1:
     name: "lexgera"

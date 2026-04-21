@@ -93,6 +93,16 @@ BODY FOOTER {
     padding: 30px;
 }
 
+BODY MAIN.privacy {
+    width: 61%;
+    max-width: 630px;
+    color: $bodyColor;
+    background: $neutro;
+    border-radius: 30px;
+    padding: 60px 30px;
+    text-align: justify;
+}
+
 BODY HEADER {
     height: auto;
     background: transparent;

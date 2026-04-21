@@ -77,23 +77,23 @@ HEADER {
     position:   relative;
 }
 
-BODY#index {
+BODY {
     background: #8383e5;
     background-image: url('/assets/img/nuvole-desktop.png');
     height: 100dvh;
     margin: 0;
 }
 
-BODY#index HEADER,
-BODY#index MAIN,
-BODY#index FOOTER {
+BODY HEADER,
+BODY MAIN,
+BODY FOOTER {
     text-align: center;
     color: #ffffff;
     margin: auto;
     padding: 30px;
 }
 
-BODY#index HEADER {
+BODY HEADER {
     height: auto;
     background: transparent;
 }
@@ -104,12 +104,12 @@ BODY#index HEADER {
     display: block;
     margin: 1rem auto 0;
 }
-BODY#index HEADER DIV#titoli {
+BODY HEADER DIV#titoli {
     width: auto;
     display: inline-block;
     margin: 0 auto;
 }
-BODY#index HEADER H1 {
+BODY HEADER H1 {
     text-transform: uppercase;
     margin: 1rem auto;
     line-height: 1.1;
@@ -224,19 +224,17 @@ FOOTER .box.contatti h3 {
     margin: 0;
 }
 
-
-
 /* Responsive semplice */
 @media (max-width: 768px) {
-    BODY#index {
+    BODY {
         background-image: url('/assets/img/nuvole-mobile.png');
         font-size: 16pt;
 
     }
-    BODY#index HEADER DIV#titoli {
+    BODY HEADER DIV#titoli {
         width: 90%;
     }
-    BODY#index HEADER H1 {
+    BODY HEADER H1 {
         font-size: 1.6rem;
     }
 }

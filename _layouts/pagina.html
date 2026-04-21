@@ -1,3 +1,6 @@
+{% assign lang = page.lang | default: site.lang | default: 'it' %}
+{% assign t = site.data.testi[lang] %}
+
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'it' }}">
 {%- include head.html -%}
@@ -6,6 +9,6 @@
   <main class="{{ page.slug }}">
     {{ content }}
   </main>
-  {%- include footer.html t=t -%}
+  {%- include footer.html -%}
 </body>
 </html>

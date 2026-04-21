@@ -57,7 +57,7 @@ excerpt:     "Politica di protezione dei dati personali"
     Non viene fatto uso di cookie per la profilazione degli utenti e non vengono impiegati altri metodi di tracciamento.
 
     <h3>Destinatari dei dati</h3>
-    
+
     Sono destinatari dei dati raccolti a seguito della consultazione dei siti sopra elencati i soggetti, designati quali responsabili del trattamento, che forniscono specifici servizi necessari allo svolgimento delle operazioni di trattamento da parte del titolare del trattamento o che eseguono operazioni di trattamento per conto di quest’ultimo.
     I dati personali raccolti sono, altresì, trattati dai dipendenti del titolare, i quali agiscono sulla base di specifiche istruzioni fornite in ordine a finalità e modalità del trattamento medesimo.
 

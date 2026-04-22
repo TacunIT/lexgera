@@ -66,6 +66,7 @@ BODY {
     color:        $bodyColor;
     font-family:  $bodyFont;
     font-style:   normal;
+    font-size:    $fontSize;
     text-align:   left;
     width:        100%;
 }
@@ -95,6 +96,7 @@ BODY FOOTER {
 
 BODY MAIN.privacy {
     width: 61%;
+    min-width: 360px;
     max-width: 630px;
     color: $bodyColor;
     background: $neutro;
@@ -238,13 +240,26 @@ FOOTER .box.contatti h3 {
 @media (max-width: 768px) {
     BODY {
         background-image: url('/assets/img/nuvole-mobile.png');
-        font-size: 16pt;
-
     }
     BODY HEADER DIV#titoli {
         width: 90%;
     }
     BODY HEADER H1 {
         font-size: 1.6rem;
+    }
+    H2, H3, H4 {
+        text-align: left;
+    }
+}
+@media (max-width: 400px) {
+    BODY {
+        font-size: 15pt;
+    }
+    #dati {
+        padding: 1rem 10px;
+        font-size: 0.9rem;
+    }
+    #dati LABEL {
+        display: block;
     }
 }

@@ -25,14 +25,14 @@ excerpt:     "Politica di protezione dei dati personali"
     Le presenti informazioni non riguardano altri siti, pagine o servizi online raggiungibili tramite link ipertestuali eventualmente pubblicati nei siti ma riferiti a risorse esterne.
 
     <h3>Titolare del trattamento</h3>
-    A seguito della consultazione dei siti sopra elencati possono essere trattati dati relativi a persone fisiche identificate o identificabili.
-    Titolare del trattamento è:
+    A seguito della consultazione dei siti sopra elencati possono essere trattati dati relativi a persone fisiche identificate o identificabili.<br />
+    Titolare del trattamento (di seguito anche “titolare”) è:
 
-        <blockquote>
-        Avv. Cristina Marigliano (di seguito anche “titolare”)<br/>
-        con sede in Viale Carso 67, Roma<br/>
-        PEC: cristinamarigliano@ordineavvocatiroma.org<br/>
-        Telefono:  +39 06 3723461-861
+        <blockquote id="dati">
+            Avv. Cristina Marigliano<br/>
+            <label>Sede</label> Viale Carso 67, Roma<br/>
+            <label>PEC</label> cristinamarigliano@ordineavvocatiroma.org<br/>
+            <label>Telefono</label> +39 06 3723461-861
         </blockquote>
 
     <h3>Tipi di dati trattati e finalità del trattamento</h3>

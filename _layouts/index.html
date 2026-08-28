@@ -5,51 +5,9 @@
 <html lang="{{ page.lang | default: site.lang | default: 'it' }}">
 {%- include head.html -%}
 <body id="index">
-        <header>
-            <img id="logo-header" src="/assets/img/logo-bianco-verde.svg" alt="{{ t.azienda }}">
-            <div id="titoli">
-                <h1>L'alta competenza, accessibile</h1>
-                <div id="claim">
-                    {{ t.claim }}
-                </div>
-            </div>
-        </header>
+        {%- include header.html -%}
         <main>
-            <section id="card-container">
-                <div class="card">
-                    <img src="{{ t.index.card_1.icona }}">
-                    <h3>{{ t.index.card_1.titolo }}</h3>
-                    <p>
-                        {{ t.index.card_1.testo }}
-                    </p>
-                </div>
-                <div class="card">
-                    <img src="/assets/img/card-2.png">
-                    <h3>Affiancamento strategico</h3>
-                    <p>
-                        Supporto concreto per le decisioni fondamentali, dalle PMI alle start-up.
-                        Affiancamento nella gestione dell’impresa e della sua eventuale crisi.
-                    </p>
-                </div>
-                <div class="card">
-                    <img src="/assets/img/card-3.png">
-                    <h3>Gestione amministrativa</h3>
-                    <p>
-                        Gestiamo pratiche e scadenze, anche di natura fiscale e previdenziale, mentre tu pensi ai tuoi obiettivi.
-                    </p>
-                </div>
-                <div class="card">
-                    <img src="/assets/img/card-4.png">
-                    <h3>Gestione rischi tecnologici</h3>
-                    <p>
-                        Assistenza costante per il tuo assetto di cybersecurity, protezione da frodi informatiche, sicurezza e compliance dei digital data.
-                    </p>
-                </div>
-            </section>
-
-            <div id="parlaci">
-                <a href="mailto:info@lexgera.it?subject=Richiesta informazioni">Parlaci del tuo business</a>
-            </div>
+            {%- include sezione-hero.html -%}
         </main>
         {%- include footer.html -%}
 </body>

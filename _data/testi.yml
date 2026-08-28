@@ -44,14 +44,20 @@ it:
     h2:    "Privacy"
 
   menu_1:
-    name: "lexgera"
-    href: "/lexgera.html"
-  menu_2:
     name: "servizi"
-    href: "/servizi.html"
+    href: "#sezione-1"
+  menu_2:
+    name: "come ti supportiamo"
+    href: "#sezione-2.html"
   menu_3:
-    name: "privacy"
-    href: "/privacy.html"
+    name: "chi siamo"
+    href: "#sezione-3.html"
+  menu_4:
+    name: "parlaci di te"
+    href: "#sezione-4.html"
+  menu_5:
+    name: "whatsapp"
+    href: ""
 
   sezione_1:
     h2:     "Titolo sezione uno"

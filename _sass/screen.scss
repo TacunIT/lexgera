@@ -131,6 +131,13 @@ BODY HEADER {
     align-items: center;
     gap: 2rem;
 }
+
+a#menu-4 {
+    background-color: $verde;
+    display: inline-block;
+    border-radius: 88px;
+    padding: 8px 18px;
+}
 /*
 BODY HEADER DIV#logo {
     width: auto;

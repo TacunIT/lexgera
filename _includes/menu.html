@@ -1,18 +1,18 @@
 {% assign current_url = page.url | relative_url %}
 <nav id="menu-top">
-    <a href="{{ t.menu_1.href }}" class="{% if t.menu_1.href == current_url %}active{% endif %}">
+    <a id="menu-1" href="{{ t.menu_1.href }}" class="{% if t.menu_1.href == current_url %}active{% endif %}">
       {{ t.menu_1.name }}
     </a>
-    <a href="{{ t.menu_2.href }}" class="{% if t.menu_2.href == current_url %}active{% endif %}">
+    <a id="menu-2" href="{{ t.menu_2.href }}" class="{% if t.menu_2.href == current_url %}active{% endif %}">
       {{ t.menu_2.name }}
     </a>
-    <a href="{{ t.menu_3.href }}" class="{% if t.menu_3.href == current_url %}active{% endif %}">
+    <a id="menu-3" href="{{ t.menu_3.href }}" class="{% if t.menu_3.href == current_url %}active{% endif %}">
       {{ t.menu_3.name }}
     </a>
-    <a href="{{ t.menu_.href }}" class="{% if t.menu_4.href == current_url %}active{% endif %}">
+    <a id="menu-4" href="{{ t.menu_.href }}" class="{% if t.menu_4.href == current_url %}active{% endif %}">
       {{ t.menu_4.name }}
     </a>
-    <a href="{{ t.menu_5.href }}" class="{% if t.menu_5.href == current_url %}active{% endif %}">
+    <a id="menu-5" href="{{ t.menu_5.href }}" class="{% if t.menu_5.href == current_url %}active{% endif %}">
       {{ t.menu_5.name }}
     </a>
 </nav>

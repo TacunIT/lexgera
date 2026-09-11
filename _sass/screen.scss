@@ -75,11 +75,10 @@ IMG {
     );
 }
 
-// Applica il limite di larghezza a OGNI <section> figlia diretta di
-// <body>, senza doverlo ripetere sezione per sezione: qualunque nuova
-// sezione aggiunta in futuro lo eredita automaticamente.
-// Eccezione: #sezione-5 lo annulla e lo sposta sul suo .corpo, perché
-// contiene una CTA a piena larghezza che deve toccare i bordi (vedi sotto).
+// Applica il limite di larghezza a OGNI <section>, indipendentemente
+// da quanto è annidata dentro <main>/<body> — non uso BODY > SECTION
+// perché richiederebbe che <section> sia figlia DIRETTA di <body>,
+// e nel markup reale c'è <main> in mezzo.
 SECTION {
     @extend %wrap;
 }
@@ -287,7 +286,11 @@ a#menu-4 {
     }
 }
 
-.wrapper {
+// Scoped a #sezione-2: senza questo, .wrapper è un selettore globale
+// che entra in conflitto con qualsiasi altro elemento .wrapper altrove
+// nel sito (è già successo con #contatti .wrapper — flex-direction:
+// column vinceva lì anche se non c'entrava nulla).
+#sezione-2 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -651,8 +654,8 @@ a#menu-4 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 40px;              // stimato, da confermare
-        padding-block: 100px;
+        gap: 120px;             // confermato dal pannello
+        padding-block: 120px 180px;   // confermato: asimmetrico, 120 sopra / 180 sotto
     }
 
     > .corpo > header {
@@ -690,6 +693,7 @@ a#menu-4 {
 
     .wrapper {
         display: flex;
+        flex-direction: row;    // esplicito: non fare affidamento sul default del browser
         gap: 16px;               // stimato
         margin-bottom: 32px;
     }
@@ -700,7 +704,7 @@ a#menu-4 {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        padding: 16px;
+        padding: 20px;          // confermato dal pannello
         border: 1px solid $campi-border;
         border-radius: 16px;    // stimato
 

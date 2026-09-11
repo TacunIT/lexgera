@@ -76,10 +76,13 @@ IMG {
 }
 
 // ---------------------------------------------------------------
-// Header
+// Header di sito
 // ---------------------------------------------------------------
 
-BODY HEADER {
+// BODY > HEADER (figlio diretto), non BODY HEADER (discendente a
+// qualsiasi profondità): altrimenti questa regola colpisce anche
+// l'<header> interno a #sezione-2 e altre sezioni future.
+BODY > HEADER {
     @extend %wrap;
 
     background: $headerBgColor;
@@ -196,6 +199,152 @@ a#menu-4 {
     * {
         transition-duration: .01ms !important;
         animation-duration: .01ms !important;
+    }
+}
+
+// ---------------------------------------------------------------
+// Sezione 2 — Servizi
+// ---------------------------------------------------------------
+
+#sezione-2 {
+    @extend %wrap;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 600px));
+    justify-content: center;   // centra la griglia se il wrap supera 1230px (600*2+30)
+    column-gap: 30px;
+    row-gap: 100px;            // stacco header → griglia diverso dal gap tra card
+    padding-block: 100px 120px;
+    background: var(--Neutro, $neutro);
+
+    // header interno alla sezione: eyebrow + h2 + intro.
+    // reset esplicito perché BODY > HEADER non lo tocca più,
+    // ma meglio essere chiari sul contesto qui.
+    > header {
+        grid-column: 1 / -1;
+        text-align: center;
+
+        .eyebrow {
+            display: block;
+            color: $viola;
+            font-size: .85rem;
+            letter-spacing: .04em;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            margin-bottom: 16px;
+
+            em {
+                font-style: normal;
+                color: $viola;
+            }
+        }
+
+        .intro {
+            max-width: 46ch;
+            margin-inline: auto;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;      // verifica ancora questo valore in Dev Mode
+    overflow: hidden;
+
+    // era "header" nella prima versione: nell'HTML attuale la card
+    // usa <div class="top">, non un tag <header> — se lasciato
+    // "header" qui, il selettore non avrebbe mai fatto match e
+    // l'intestazione viola della card sarebbe sparita.
+    .top {
+        margin: -30px -30px 0;
+        width: calc(100% + 60px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $viola;
+        color: #ffffff;
+        padding: 20px 30px;    // verifica il padding interno esatto
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        img, svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    h4 {
+        font-size: 1.15rem;
+        line-height: 1.3;
+        color: $viola;
+    }
+
+    p {
+        font-size: .95rem;
+        line-height: 1.5;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    h5 {
+        font-size: .85rem;
+        font-weight: 700;
+        color: $bodyColor;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            font-size: .9rem;
+            line-height: 1.7;
+
+            &::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: $viola;
+            }
+        }
+    }
+
+    .chiedi-info {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: $viola;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid $viola;
+        border-radius: 999px;
+        padding: 10px 20px;
+        margin-top: auto;   // spinge il pulsante in fondo se le card hanno altezze diverse
+
+        &:hover,
+        &:focus-visible {
+            background: $viola;
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #sezione-2 {
+        grid-template-columns: minmax(0, 600px);
+        row-gap: 64px;
     }
 }
 

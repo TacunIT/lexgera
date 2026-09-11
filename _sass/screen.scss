@@ -75,6 +75,15 @@ IMG {
     );
 }
 
+// Applica il limite di larghezza a OGNI <section> figlia diretta di
+// <body>, senza doverlo ripetere sezione per sezione: qualunque nuova
+// sezione aggiunta in futuro lo eredita automaticamente.
+// Eccezione: #sezione-5 lo annulla e lo sposta sul suo .corpo, perché
+// contiene una CTA a piena larghezza che deve toccare i bordi (vedi sotto).
+SECTION {
+    @extend %wrap;
+}
+
 // ---------------------------------------------------------------
 // Header di sito
 // ---------------------------------------------------------------
@@ -130,8 +139,6 @@ a#menu-4 {
 // ---------------------------------------------------------------
 
 #hero {
-    @extend %wrap;
-
     display: flex;
     align-items: center;
     gap: 100px;
@@ -207,8 +214,6 @@ a#menu-4 {
 // ---------------------------------------------------------------
 
 #sezione-2 {
-    @extend %wrap;
-
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 600px));
     justify-content: center;   // centra la griglia se il wrap supera 1230px (600*2+30)
@@ -244,6 +249,40 @@ a#menu-4 {
         .intro {
             max-width: 46ch;
             margin-inline: auto;
+        }
+    }
+
+    // footer interno alla sezione: CTA finale sotto le card
+    > footer {
+        grid-column: 1 / -1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        h3 {
+            font-size: 1.15rem;
+        }
+
+        p {
+            max-width: 46ch;
+            color: $bodyColor;
+        }
+
+        .prenota-call {
+            display: inline-block;
+            background: $verde;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 12px 28px;
+
+            &:hover,
+            &:focus-visible {
+                filter: brightness(0.95);
+            }
         }
     }
 }
@@ -345,6 +384,564 @@ a#menu-4 {
     #sezione-2 {
         grid-template-columns: minmax(0, 600px);
         row-gap: 64px;
+    }
+}
+
+// ---------------------------------------------------------------
+// Sezione 3 — Lexgera è il partner...
+// ---------------------------------------------------------------
+
+#sezione-3 {
+    padding-block: 100px;   // da confermare: non ancora visto nel pannello
+
+    .corpo {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        padding: 20px;
+        border-radius: 20px;
+        background: $backgroundColor;   // bianco, confermato dallo screenshot
+    }
+
+    .illustrazione {
+        flex: 1 1 0;
+        min-width: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            // arrotondato solo a sinistra: il lato destro dell'immagine
+            // finisce nel gap prima di toccare il bordo della card
+            border-radius: 20px 0 0 20px;
+        }
+    }
+
+    .testo {
+        flex: 1 1 0;
+        min-width: 0;
+        color: $bodyColor;
+
+        h2 {
+            font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+            font-weight: 800;
+            line-height: 1.15;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: $scuro;   // PLACEHOLDER: viola scuro/navy, non ancora nella palette — vedi sotto
+
+            span {
+                color: $viola;   // aggiornato: nello screenshot è il viola medio già in palette, non $indaco
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    #sezione-3 .corpo {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+    }
+}
+
+// ---------------------------------------------------------------
+// Sezione 4 — Il modello Lexgera
+// ---------------------------------------------------------------
+
+#sezione-4 {
+    padding-block: 100px;   // da confermare, non ancora visto nel pannello
+
+    > header {
+        text-align: center;
+        margin-bottom: 64px;   // da confermare
+
+        .eyebrow {
+            color: $viola;
+            font-size: .85rem;
+            letter-spacing: .04em;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: $scuro;      // stesso PLACEHOLDER della sezione 3
+            text-transform: uppercase;
+            font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .intro {
+            max-width: 46ch;
+            margin-inline: auto;
+            color: $bodyColor;
+        }
+    }
+
+    #stack {
+        max-width: 1024px;   // confermato dal pannello: 1024×56 è la riga a piena larghezza
+        margin-inline: auto;
+    }
+
+    .linea {
+        display: grid;
+        grid-template-columns: minmax(220px, 320px) 1fr;
+        gap: 60px;            // stimato, non confermato: verifica in Dev Mode
+        align-items: center;
+        padding-block: 8px;   // confermato dal pannello
+        border-top: 1px solid rgba(0, 0, 0, .08);
+
+        &:last-child {
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+        }
+
+        h4 {
+            color: $scuro;     // stesso PLACEHOLDER; verifica se varia riga per riga (vedi nota sotto)
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: $bodyColor;
+            font-size: .95rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #sezione-4 .linea {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-block: 24px;
+    }
+}
+
+// ---------------------------------------------------------------
+// Sezione 5 — Chi siamo
+// ---------------------------------------------------------------
+
+#sezione-5 {
+    background: $neutro;   // stessa area lavanda chiara delle altre sezioni
+
+    // Reset del padding ereditato da "BODY > SECTION": qui la CTA (.cta)
+    // deve toccare i bordi del viewport, quindi il limite di larghezza
+    // si applica solo al .corpo, non all'intera sezione.
+    padding-inline: 0;
+
+    .corpo {
+        @extend %wrap;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;           // stimato: stacco tra header e riga testo/immagine
+        padding-block: 100px;
+    }
+
+    header {
+        text-align: center;
+        max-width: 700px;    // stimato, da confermare: dava i ~132px di margine simmetrico visti nel mock
+
+        .eyebrow {
+            color: $viola;
+            font-size: .85rem;
+            letter-spacing: .04em;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: $scuro;
+
+            em {
+                font-style: normal;
+                color: $viola;
+            }
+        }
+
+        .intro {
+            color: $bodyColor;
+        }
+    }
+
+    .riga {
+        display: flex;
+        align-items: flex-start;
+        gap: 100px;           // confermato: coerente col gap già visto in sezione 3
+        width: 100%;
+    }
+
+    .testo {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;             // confermato dal pannello (Frame 751: gap 30px)
+
+        p {
+            color: $bodyColor;
+            line-height: 1.6;
+        }
+
+        .nome {
+            color: $viola;
+            font-weight: 600;
+        }
+    }
+
+    .illustrazione {
+        flex: 1 1 0;
+        min-width: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;   // stimato, da confermare
+        }
+    }
+
+    .cta {
+        background: $viola;
+        text-align: center;
+        padding-block: 32px;   // stimato, da confermare
+
+        p {
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: .02em;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    #sezione-5 .riga {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+// ---------------------------------------------------------------
+// Contatti
+// ---------------------------------------------------------------
+
+#contatti {
+    background: $viola;
+    color: #ffffff;
+
+    .corpo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;              // stimato, da confermare
+        padding-block: 100px;
+    }
+
+    > .corpo > header {
+        text-align: center;
+
+        h2 {
+            text-transform: uppercase;
+            font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .intro {
+            max-width: 46ch;
+            margin-inline: auto;
+            opacity: .9;
+        }
+    }
+
+    // card unica bianca: contiene sia i "cosa" che il form,
+    // nessuna divisione visiva tra le due parti
+    .form {
+        width: 100%;
+        background: #ffffff;
+        color: $bodyColor;
+        border-radius: 30px;    // stimato, da confermare sul frame esterno
+        padding: 40px;          // stimato
+
+        > p,
+        > h4 {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 16px;               // stimato
+        margin-bottom: 32px;
+    }
+
+    .cosa {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        border: 1px solid $campi-border;
+        border-radius: 16px;    // stimato
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        h4 {
+            color: $scuro;
+            font-size: .95rem;
+            margin-bottom: 0;
+        }
+
+        p {
+            color: $bodyColor;
+            font-size: .85rem;
+            line-height: 1.4;
+        }
+
+        img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            align-self: flex-end;
+            order: -1;           // icona in alto a destra, sopra al testo
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h3 {
+            color: $scuro;
+            font-size: 1.15rem;
+        }
+
+        .campi {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;           // confermato dal pannello
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0 20px;
+            border: 1px solid $campi-border;
+            border-radius: 999px;   // pillola: il 30px del pannello, su 40px di altezza, equivale a full-round
+            background: $campi-bg;
+            font-family: inherit;
+            font-size: .95rem;
+            color: $bodyColor;
+
+            &::placeholder {
+                color: rgba(51, 51, 51, .5);
+            }
+        }
+
+        input {
+            height: 40px;        // confermato dal pannello
+        }
+
+        textarea {
+            padding: 16px 20px;
+            border-radius: 20px; // stimato: un rettangolo arrotondato, non una pillola, essendo multi-riga
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .consenso {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+
+            input[type="checkbox"] {
+                appearance: none;
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+                margin-top: 2px;
+                border: 1px solid $campi-border;
+                border-radius: 50%;   // nel mock sembra un cerchio, non un quadrato
+                background: $campi-bg;
+
+                &:checked {
+                    background: $viola;
+                    border-color: $viola;
+                }
+            }
+
+            label {
+                font-weight: normal;
+                font-size: .85rem;
+                color: $bodyColor;
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        // pulsante invio e link Whatsapp affiancati, non impilati
+        .azioni {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        button[type="submit"] {
+            background: $verde;
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 999px;
+            padding: 14px 32px;
+            cursor: pointer;
+            transition: filter .2s ease;
+
+            &:hover,
+            &:focus-visible {
+                filter: brightness(.95);
+            }
+        }
+
+        #urgente {
+            text-align: right;
+            font-size: .9rem;
+
+            a {
+                color: $verde;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    #contatti {
+        .wrapper {
+            flex-direction: column;
+        }
+
+        form .campi {
+            grid-template-columns: 1fr;
+        }
+
+        form .azioni {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+// ---------------------------------------------------------------
+// Footer di sito
+// ---------------------------------------------------------------
+
+// BODY > FOOTER, non FOOTER da solo: #sezione-2 ha già un <footer>
+// scoped al suo interno (CTA "Nessuno di questi ti descrive?"),
+// stesso principio già applicato a BODY > HEADER.
+BODY > FOOTER {
+    @extend %wrap;
+
+    background: $nero;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    padding-block: 50px;
+
+    .riga {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        img {
+            height: 32px;
+            width: auto;
+        }
+
+        p {
+            color: $testi-scuro-2;
+            font-size: .9rem;
+            line-height: 1.3;
+        }
+    }
+
+    .social img {
+        width: 24px;
+        height: 24px;
+    }
+
+    address {
+        font-style: normal;
+        font-size: .9rem;
+        line-height: 1.6;
+
+        a {
+            color: $testi-scuro-2;
+            text-decoration: none;
+
+            &:hover,
+            &:focus-visible {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .legal a {
+        color: $testi-scuro-2;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    BODY > FOOTER .riga {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
     }
 }
 

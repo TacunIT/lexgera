@@ -1,34 +1,21 @@
-<footer class="site-footer">
-    <div class="alta">
-        {%- include menu-social.html -%}
+<footer>
+    <div class="riga">
+        <div class="brand">
+            <img id="logo-footer" src="/assets/img/logo-bianco.svg" alt="Lexgera">
+            <p>Alta competenza, accessibile</p>
+        </div>
+        <a class="social" href="https://instagram.com/lexgera" aria-label="Instagram">
+            <img src="/assets/icon/instagram.svg" alt="">
+        </a>
     </div>
-    <div class="bassa">
-        <div class="box contatti">
-          <h3 id="ragione-sociale">
-              <img id="logo-footer" src="/assets/img/logo-bianco-verde.svg" alt="{{ t.azienda }}">
-          </h3>
-          <p id="indirizzo-1">
-              {{ t.contatti.indirizzo}} &nbsp;-&nbsp;
-              {{ t.contatti.cap}}       &nbsp;-&nbsp;
-              {{ t.contatti.citta }} ({{ t.contatti.provincia}}) &nbsp;-&nbsp;
-              {{ t.contatti.nazione}}
-          </p>
-          <!--
-          <p id="iva-cv">
-              <label>{{ t.s_partita_iva}}</label>{{ t.partita_iva }}
-          </p>
-          <p id="pec">
-               <label>{{ t.s_pec}}</label>{{ t.pec }}
-          </p>
-          -->
-          <p id="e-mail">
-              <a href="mailto:{{ t.e_mail}}?Subject={{ t.info_subject}}">{{ t.e_mail}}</a>
-          </p>
-        </div>
-        <div class="box menu">
-            <nav id="menu-footer">
-                <a href="{{ t.privacy.href }}">{{ t.privacy.label }}</a>
-            </nav>
-        </div>
+
+    <div class="riga">
+        <address>
+            Sede principale: Viale Carso 67 - Roma 00195<br>
+            <a href="mailto:info@legera.it">info@legera.it</a>
+        </address>
+        <p class="legal">
+            <a href="/cookie-policy">Cookie Policy</a> e <a href="/privacy-policy">Privacy Policy</a>
+        </p>
     </div>
 </footer>

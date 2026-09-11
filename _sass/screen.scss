@@ -1,95 +1,94 @@
+@use "lexgera" as *;
 
-@import "lexgera";
+/* @import CSS nativo: @use non produce output, quindi questa resta
+   la prima regola del CSS compilato — ordine valido. */
 @import url('bevellier.css');
 
-:root{
+// ---------------------------------------------------------------
+// Reset
+// ---------------------------------------------------------------
 
-    --phi: 1.618;
-
-    --header-height: 160px;
-    --footer-height: 280px;
-
-    --main-h: 61.8dvh;
-    --hf-h: 38.2dvh;
-
-    /* proporzione interna header/footer (2:1) */
-    --header-h: calc(var(--hf-h) * 1);
-    --footer-h: calc(var(--hf-h) * 0.5);
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.nero {
-    color: #000000 !important;
+HTML {
+    font-size: $fontSize;
 }
 
-* {
-                margin: 0;
-               padding: 0;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+BODY {
+    background:  $backgroundColor;
+    color:       $bodyColor;
+    font-family: $bodyFont;
+    font-size:   1rem;
+    line-height: 1.5;
+    text-align:  left;
+    width:       100%;
+    min-height:  100dvh;
 }
 
 A {
     color: $linkColor;
 }
-LABEL {
-    font-weight: bold;
-}
-LABEL:after {
-    content: ":";
-    margin-right: 4px;
-}
+
 NAV A {
     display: inline-block;
     text-decoration: none;
 }
 
+LABEL {
+    font-weight: bold;
+
+    &::after {
+        content: ":";
+        margin-right: 4px;
+    }
+}
+
 BLOCKQUOTE {
     padding: 1rem;
 }
-HTML {
-    font-size:    $fontSize;
+
+IMG {
+    max-width: 100%;
+    display: block;
 }
 
-BODY {
-    background:   $backgroundColor;
-    color:        $bodyColor;
-    font-family:  $bodyFont;
-    font-style:   normal;
-    font-size:    $fontSize;
-    text-align:   left;
-    width:        100%;
+// Focus visibile da tastiera (accessibilità)
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
 }
 
-BODY {
-    background:$backgroundColor;
-    height: 100dvh;
-    margin: 0;
+// ---------------------------------------------------------------
+// Contenitore: sfondo full-bleed, contenuto limitato a $wrapMax
+// ---------------------------------------------------------------
+
+%wrap {
+    padding-inline: max(
+        clamp(24px, 5vw, #{$gutter}),
+        (100% - #{$wrapMax}) / 2
+    );
 }
 
-BODY MAIN.privacy {
-    width: 61%;
-    min-width: 360px;
-    max-width: 630px;
-    color: $bodyColor;
-    background: $neutro;
-    border-radius: 30px;
-    padding: 60px 30px;
-    text-align: justify;
-}
+// ---------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------
 
 BODY HEADER {
-    height: auto;
-    background: $headerBgColor;
-    color: $headerColor;
-    padding: 15px 144px;
-}
+    @extend %wrap;
 
-#logo-header {
-    width:  134px;
-    height: 40px;
-    display: block;
-    margin:  0;
+    background: $headerBgColor;
+    color:      $headerColor;
+    padding-block: 15px;
+
+    A {
+        color: $linkColorDark;
+    }
 }
 
 #site-header {
@@ -99,13 +98,15 @@ BODY HEADER {
     width: 100%;
 }
 
-#logo {
+#logo,
+#logo-header {
     display: flex;
     align-items: center;
 }
 
 #logo-header {
-    display: block;
+    width:  134px;
+    height: 40px;
 }
 
 #menu-top {
@@ -121,135 +122,99 @@ a#menu-4 {
     padding: 8px 18px;
 }
 
+// ---------------------------------------------------------------
+// Hero
+// ---------------------------------------------------------------
+
 #hero {
+    @extend %wrap;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 100px;
-    padding: 100px 144px;
-    background: linear-gradient(135deg, #7b6ff0, #8b7ef5);
-    box-sizing: border-box;
-}
-
-#hero .testi {
-    flex: 1;
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding-block: 100px;
+    background: $viola;
     color: #ffffff;
+
+    .testi {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h1 {
+            font-size: clamp(2rem, 3.2vw, 2.75rem);
+            font-weight: 800;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        p {
+            max-width: 42ch;
+            margin-bottom: 40px;
+        }
+    }
+
+    #scopri {
+        display: inline-block;
+        padding: 14px 28px;
+        border: 1.5px solid rgba(255, 255, 255, .6);
+        border-radius: 999px;
+        color: $linkColorDark;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: .95rem;
+        transition: background .2s ease, color .2s ease;
+
+        &:hover,
+        &:focus-visible {
+            background: #ffffff;
+            color: $viola;
+        }
+    }
+
+    #immagini {
+        flex: 1 1 0;
+        min-width: 0;
+        width: 100%;
+        height: auto;   // mantiene le proporzioni del PNG
+    }
 }
 
-#hero .testi h1 {
-    font-size: 2.75rem;
-    font-weight: 800;
-    line-height: 1.15;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-}
-
-#hero .testi p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    margin: 0 0 32px 0;
-    opacity: 0.9;
-}
-
-#hero .testi #scopri {
-    display: inline-block;
-    padding: 14px 28px;
-    border: 1.5px solid #ffffff;
-    border-radius: 30px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-#hero .testi #scopri:hover {
-    background: #ffffff;
-    color: #7b6ff0;
-}
-
-#hero IMG#immagini {
-    flex: 1;
-    max-width: 500px;
-    aspect-ratio: 4 / 3;
-    /* placeholder: sostituisci con le immagini/collage reali */
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-}
-
-/* Responsive: colonna singola sotto una certa larghezza */
-@media (max-width: 900px) {
+@media (max-width: 860px) {
     #hero {
         flex-direction: column;
-        padding: 60px 24px;
-        text-align: left;
-    }
-
-    #hero .testi,
-    #hero .immagine {
-        max-width: 100%;
+        align-items: flex-start;
+        gap: 48px;
+        padding-block: 64px;
     }
 }
-/*
-BODY HEADER DIV#logo {
-    width: auto;
-    display: inline-block;
-}
-BODY HEADER DIV#menu {
-    width: auto;
-    display: inline-block;
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
 }
 
-#claim {
-    font-size: 24px;
-    line-height: 140%;
-}
-#parlaci {
-    display: inline-block;
-    background: $verde;
-    line-height: 40px;
-    padding: 10px 30px;
-    border-radius: 30px;
-    margin: 60px auto;
-}
+// ---------------------------------------------------------------
+// Pagine testuali
+// ---------------------------------------------------------------
 
-#card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-DIV.card {
+BODY MAIN.privacy {
+    width: 61%;
+    min-width: 360px;
+    max-width: 630px;
+    color: $bodyColor;
     background: $neutro;
-    color: #000000;
-    text-align: left;
-    width: 300px;
-    height: 300px;
-    padding: 25px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-radius: 10px;
-    gap: 10px;
-    font-size: 0.9rem;
+    border-radius: 30px;
+    padding: 60px 30px;
+    text-align: justify;
+    margin-inline: auto;
 }
 
-DIV.card IMG {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
+.nero {
+    color: #000000 !important;
 }
-
-DIV.card H3 {
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-*/

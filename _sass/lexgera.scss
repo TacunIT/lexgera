@@ -1,30 +1,39 @@
-$backgroundColor: #ffffff;
-$bodyColor:       #333333;
-$bodyFont:        "Bevellier-Regular";
-$fontSize:        16pt;
+// ---------------------------------------------------------------
+// Lexgera — variabili
+// ---------------------------------------------------------------
 
-$headerBgColor:   #8383E5;
-$headerColor:     #ffffff;
-$headerHeight:    136px;
-
-$menuBgColor:     #71CC98;
-$menuColor:       #ffffff;
-$menuHeight:      36px;
-
-$footerBgColor:   #71CC98;
-$footerColor:     #ffffff;
-$footerHeight:    200px;
-
-$sectionHeight:   calc(100vh - 120px);
-$sectionVPadding: 40px;
-$asideHeight:     calc(100vh - 120px - (2 * 40px));
-$phi:             1.6180339887498948482;
-$bluette:         #02b8df;
-$headerColor:     #ffffff;
-$linkColor:       #ffffff;
-
+// Palette
 $viola:           #8383E5;
 $verde:           #71CC98;
 $neutro:          #ededed;
 $lilla:           #D6BDFF;
 $indaco:          #B29AFF;
+$bluette:         #02b8df;
+
+// Colori di base
+$backgroundColor: #ffffff;
+$bodyColor:       #333333;
+$linkColor:       $viola;          // link su fondo chiaro
+$linkColorDark:   #ffffff;         // link su fondo viola (header, hero)
+
+// Tipografia
+$bodyFont:        "Bevellier-Regular", system-ui, sans-serif;
+$fontSize:        100%;            // NON usare pt: rispetta le preferenze utente
+
+// Header / footer
+$headerBgColor:   $viola;
+$headerColor:     #ffffff;
+$headerHeight:    136px;
+
+$menuBgColor:     $verde;
+$menuColor:       #ffffff;
+$menuHeight:      36px;
+
+$footerBgColor:   $verde;
+$footerColor:     #ffffff;
+$footerHeight:    200px;
+
+// Layout
+$wrapMax:         1440px;          // larghezza contenuto (da Figma: 1728 - 144*2)
+$gutter:          144px;           // padding laterale desktop
+$phi:             1.6180339887498948482;

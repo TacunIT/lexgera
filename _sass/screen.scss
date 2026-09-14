@@ -89,7 +89,7 @@ SECTION {
 
 // BODY > HEADER (figlio diretto), non BODY HEADER (discendente a
 // qualsiasi profondità): altrimenti questa regola colpisce anche
-// l'<header> interno a #sezione-2 e altre sezioni future.
+// l'<header> interno a #servizi e altre sezioni future.
 BODY > HEADER {
     @extend %wrap;
 
@@ -212,7 +212,7 @@ a#menu-4 {
 // Sezione 2 — Servizi
 // ---------------------------------------------------------------
 
-#sezione-2 {
+#servizi {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 600px));
     justify-content: center;   // centra la griglia se il wrap supera 1230px (600*2+30)
@@ -286,11 +286,11 @@ a#menu-4 {
     }
 }
 
-// Scoped a #sezione-2: senza questo, .wrapper è un selettore globale
+// Scoped a #servizi: senza questo, .wrapper è un selettore globale
 // che entra in conflitto con qualsiasi altro elemento .wrapper altrove
 // nel sito (è già successo con #contatti .wrapper — flex-direction:
 // column vinceva lì anche se non c'entrava nulla).
-#sezione-2 .wrapper {
+#servizi .wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -384,7 +384,7 @@ a#menu-4 {
 }
 
 @media (max-width: 700px) {
-    #sezione-2 {
+    #servizi {
         grid-template-columns: minmax(0, 600px);
         row-gap: 64px;
     }
@@ -465,7 +465,7 @@ a#menu-4 {
 // Sezione 4 — Il modello Lexgera
 // ---------------------------------------------------------------
 
-#sezione-4 {
+#modello {
     padding-block: 100px;   // da confermare, non ancora visto nel pannello
 
     > header {
@@ -526,7 +526,7 @@ a#menu-4 {
 }
 
 @media (max-width: 700px) {
-    #sezione-4 .linea {
+    #modello .linea {
         grid-template-columns: 1fr;
         gap: 8px;
         padding-block: 24px;
@@ -537,7 +537,7 @@ a#menu-4 {
 // Sezione 5 — Chi siamo
 // ---------------------------------------------------------------
 
-#sezione-5 {
+#chi-siamo {
     background: $neutro;   // stessa area lavanda chiara delle altre sezioni
 
     // Reset del padding ereditato da "BODY > SECTION": qui la CTA (.cta)
@@ -636,7 +636,7 @@ a#menu-4 {
 }
 
 @media (max-width: 860px) {
-    #sezione-5 .riga {
+    #chi-siamo .riga {
         flex-direction: column;
         gap: 40px;
     }
@@ -869,7 +869,7 @@ a#menu-4 {
 // Footer di sito
 // ---------------------------------------------------------------
 
-// BODY > FOOTER, non FOOTER da solo: #sezione-2 ha già un <footer>
+// BODY > FOOTER, non FOOTER da solo: #servizi ha già un <footer>
 // scoped al suo interno (CTA "Nessuno di questi ti descrive?"),
 // stesso principio già applicato a BODY > HEADER.
 BODY > FOOTER {

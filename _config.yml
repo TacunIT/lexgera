@@ -3,7 +3,6 @@ destination:    "docs/"
 fqdn:           "tacun.it"
 highlighter:     none
 url:            "https://dev.tacun.it"
-whatsapp:       393404204768
 
 sass:
     style: compressed

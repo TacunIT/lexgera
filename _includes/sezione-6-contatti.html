@@ -1,10 +1,139 @@
+<section id="contatti">
+    <div class="corpo">
+        <header>
+            <h2>Parla con un nostro consulente</h2>
+            <p class="intro">
+                Ti aiuteremo a capire quali competenze attivare e quale percorso può essere più adatto alla tua impresa.
+            </p>
+        </header>
+
+        <div class="form">
+            <p>Di cosa hai bisogno?</p>
+
+            <div class="wrapper">
+                <label class="cosa">
+                    <div>
+                        <h4>Primo Passo</h4>
+                        <p>Sto avviando un'impresa</p>
+                    </div>
+                    <img src="{{ '/assets/img/contatti-1.png' | relative_url }}" alt="">
+                </label>
+
+                <label class="cosa">
+                    <div>
+                        <h4>Spalla</h4>
+                        <p>Cerco un supporto continuativo</p>
+                    </div>
+                    <img src="{{ '/assets/img/contatti-2.png' | relative_url }}" alt="">
+                </label>
+
+                <label class="cosa">
+                    <div>
+                        <h4>Come stai?</h4>
+                        <p>Voglio capire come sta la mia azienda</p>
+                    </div>
+                    <img src="{{ '/assets/img/contatti-3.png' | relative_url }}" alt="">
+                </label>
+
+                <label class="cosa">
+                    <div>
+                        <h4>Essenziale</h4>
+                        <p>Ho bisogno di un percorso su misura</p>
+                    </div>
+                    <img src="{{ '/assets/img/contatti-4.png' | relative_url }}" alt="">
+                </label>
+
+                <label class="cosa">
+                    <div>
+                        <h4>Altro</h4>
+                        <p>La tua esigenza è diversa? Raccontacela.</p>
+                    </div>
+                    <img src="{{ '/assets/img/contatti-5.png' | relative_url }}" alt="">
+                </label>
+            </div>
+
+            <form id="contatti-form">
+                <h3>Raccontaci di te</h3>
+
+                <div class="campi">
+                    <input id="nome"
+                           name="nome"
+                           placeholder="Nome*"
+                           required>
+
+                    <input id="cognome"
+                           name="cognome"
+                           placeholder="Cognome*"
+                           required>
+
+                    <input id="e-mail"
+                           name="email"
+                           type="email"
+                           placeholder="E-mail*"
+                           required>
+
+                    <input id="azienda"
+                           name="azienda"
+                           placeholder="Azienda*"
+                           required>
+                </div>
+
+                <textarea id="messaggio"
+                          name="messaggio"
+                          placeholder="In poche righe, da dove vorresti partire..."></textarea>
+
+                <div class="consenso">
+                    <input type="checkbox"
+                           id="privacy"
+                           name="privacy"
+                           required>
+
+                    <label for="privacy">
+                        Per presa visione dell'informativa specificata a questo link (*)
+                    </label>
+                </div>
+
+                <div class="azioni">
+                    <button type="submit">Invia richiesta</button>
+
+                    <p id="urgente">
+                        Hai una questione urgente? Scrivici su
+                        <a href="{{ menu_5_url }}"
+                           target="wa"
+                           title="Scrivici su Whatsapp">Whatsapp</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 <script>
-document.getElementById('contatti-form').addEventListener('submit', function (event) {
+const form = document.getElementById('contatti-form');
+const esigenze = document.querySelectorAll('#contatti .cosa');
+
+
+/*
+ * Selezione dell'esigenza
+ */
+esigenze.forEach(function (elemento) {
+    elemento.addEventListener('click', function () {
+
+        esigenze.forEach(function (item) {
+            item.classList.remove('selezionata');
+        });
+
+        elemento.classList.add('selezionata');
+    });
+});
+
+
+/*
+ * Invio del form
+ */
+form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const form = this;
-
-    const esigenza = document.querySelector('input[name="esigenza"]:checked');
     const nome = document.getElementById('nome').value.trim();
     const cognome = document.getElementById('cognome').value.trim();
     const email = document.getElementById('e-mail').value.trim();
@@ -12,33 +141,35 @@ document.getElementById('contatti-form').addEventListener('submit', function (ev
     const messaggio = document.getElementById('messaggio').value.trim();
     const privacy = document.getElementById('privacy').checked;
 
-    // Validazione dei campi HTML
+    /*
+     * Validazione HTML nativa
+     */
     if (!form.checkValidity()) {
         form.reportValidity();
         return;
     }
 
-    // Esigenza
-    if (!esigenza) {
-        alert('Seleziona di cosa hai bisogno.');
-        return;
-    }
-
-    // Nome
+    /*
+     * Nome
+     */
     if (nome.length < 2) {
         alert('Inserisci un nome valido.');
         document.getElementById('nome').focus();
         return;
     }
 
-    // Cognome
+    /*
+     * Cognome
+     */
     if (cognome.length < 2) {
         alert('Inserisci un cognome valido.');
         document.getElementById('cognome').focus();
         return;
     }
 
-    // E-mail
+    /*
+     * E-mail
+     */
     const emailValida =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -48,36 +179,42 @@ document.getElementById('contatti-form').addEventListener('submit', function (ev
         return;
     }
 
-    // Azienda
+    /*
+     * Azienda
+     */
     if (azienda.length < 2) {
         alert('Inserisci il nome dell’azienda.');
         document.getElementById('azienda').focus();
         return;
     }
 
-    // Messaggio: facoltativo, ma se presente deve avere un contenuto sensato
+    /*
+     * Messaggio
+     */
     if (messaggio.length > 0 && messaggio.length < 5) {
         alert('Il messaggio è troppo breve.');
         document.getElementById('messaggio').focus();
         return;
     }
 
-    // Privacy
+    /*
+     * Privacy
+     */
     if (!privacy) {
-        alert('Devi prendere visione dell’informativa sulla privacy.');
+        alert('Devi accettare la presa visione dell’informativa sulla privacy.');
         document.getElementById('privacy').focus();
         return;
     }
 
-    // Tutto OK: costruzione della mail
+    /*
+     * E-mail
+     */
     const destinatario = 'info@esempio.it';
 
     const oggetto = 'Richiesta di contatto dal sito';
 
     const corpo =
         'Richiesta di contatto dal sito\n\n' +
-        'ESIGENZA\n' +
-        esigenza.value + '\n\n' +
         'NOME\n' +
         nome + '\n\n' +
         'COGNOME\n' +
@@ -88,6 +225,7 @@ document.getElementById('contatti-form').addEventListener('submit', function (ev
         azienda + '\n\n' +
         'MESSAGGIO\n' +
         (messaggio || '(nessun messaggio)');
+
 
     const mailto =
         'mailto:' + destinatario +

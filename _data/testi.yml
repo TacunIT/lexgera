@@ -45,16 +45,16 @@ it:
 
   menu_1:
     name: "servizi"
-    href: "#sezione-1"
+    href: "/#servizi"
   menu_2:
     name: "come ti supportiamo"
-    href: "#sezione-2.html"
+    href: "/#modello"
   menu_3:
     name: "chi siamo"
-    href: "#sezione-3.html"
+    href: "/#chi-siamo"
   menu_4:
     name: "parlaci di te"
-    href: "#sezione-4.html"
+    href: "/#contatti"
   menu_5:
     name: "whatsapp"
     href: ""

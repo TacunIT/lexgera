@@ -12,6 +12,7 @@
 
             <div class="wrapper">
                 <label class="cosa">
+                    <input type="radio" name="richiesta" value="Primo Passo" class="cosa-radio">
                     <div>
                         <h4>Primo Passo</h4>
                         <p>Sto avviando un'impresa</p>
@@ -20,6 +21,7 @@
                 </label>
 
                 <label class="cosa">
+                    <input type="radio" name="richiesta" value="Spalla" class="cosa-radio">
                     <div>
                         <h4>Spalla</h4>
                         <p>Cerco un supporto continuativo</p>
@@ -28,6 +30,7 @@
                 </label>
 
                 <label class="cosa">
+                    <input type="radio" name="richiesta" value="Come stai?" class="cosa-radio">
                     <div>
                         <h4>Come stai?</h4>
                         <p>Voglio capire come sta la mia azienda</p>
@@ -36,6 +39,7 @@
                 </label>
 
                 <label class="cosa">
+                    <input type="radio" name="richiesta" value="Essenziale" class="cosa-radio">
                     <div>
                         <h4>Essenziale</h4>
                         <p>Ho bisogno di un percorso su misura</p>
@@ -44,6 +48,7 @@
                 </label>
 
                 <label class="cosa">
+                    <input type="radio" name="richiesta" value="Ho una esigenza diversa" class="cosa-radio">
                     <div>
                         <h4>Altro</h4>
                         <p>La tua esigenza è diversa? Raccontacela.</p>
@@ -82,6 +87,12 @@
                           name="messaggio"
                           placeholder="In poche righe, da dove vorresti partire..."></textarea>
 
+                <!-- Campo honeypot anti-spam: invisibile per le persone, i bot lo compilano -->
+                <div class="hp-field" aria-hidden="true">
+                    <label for="sito-web">Lascia vuoto questo campo</label>
+                    <input type="text" id="sito-web" name="sito-web" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="consenso">
                     <input type="checkbox"
                            id="privacy"
@@ -109,129 +120,75 @@
 </section>
 
 <script>
-const form = document.getElementById('contatti-form');
-const esigenze = document.querySelectorAll('#contatti .cosa');
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contatti-form');
+    if (!form) return;
 
-
-/*
- * Selezione dell'esigenza
- */
-esigenze.forEach(function (elemento) {
-    elemento.addEventListener('click', function () {
-
-        esigenze.forEach(function (item) {
-            item.classList.remove('selezionata');
+    // Evidenzia la card selezionata tra le opzioni "Di cosa hai bisogno?"
+    var cardRadios = document.querySelectorAll('.cosa-radio');
+    cardRadios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            cardRadios.forEach(function (r) {
+                r.closest('.cosa').classList.remove('selected');
+            });
+            if (radio.checked) {
+                radio.closest('.cosa').classList.add('selected');
+            }
         });
-
-        elemento.classList.add('selezionata');
     });
-});
 
+    // Contenitore per i messaggi di esito (successo/errore)
+    var feedback = document.createElement('p');
+    feedback.id = 'contatti-feedback';
+    feedback.setAttribute('role', 'status');
+    feedback.style.display = 'none';
+    form.appendChild(feedback);
 
-/*
- * Invio del form
- */
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+    var submitBtn = form.querySelector('button[type="submit"]');
 
-    const nome = document.getElementById('nome').value.trim();
-    const cognome = document.getElementById('cognome').value.trim();
-    const email = document.getElementById('e-mail').value.trim();
-    const azienda = document.getElementById('azienda').value.trim();
-    const messaggio = document.getElementById('messaggio').value.trim();
-    const privacy = document.getElementById('privacy').checked;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    /*
-     * Validazione HTML nativa
-     */
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
+        // Evita doppi invii
+        submitBtn.disabled = true;
+        var originalLabel = submitBtn.textContent;
+        submitBtn.textContent = 'Invio in corso...';
 
-    /*
-     * Nome
-     */
-    if (nome.length < 2) {
-        alert('Inserisci un nome valido.');
-        document.getElementById('nome').focus();
-        return;
-    }
+        feedback.style.display = 'none';
+        feedback.classList.remove('ok', 'errore');
 
-    /*
-     * Cognome
-     */
-    if (cognome.length < 2) {
-        alert('Inserisci un cognome valido.');
-        document.getElementById('cognome').focus();
-        return;
-    }
+        var formData = new FormData(form);
 
-    /*
-     * E-mail
-     */
-    const emailValida =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-    if (!emailValida) {
-        alert('Inserisci un indirizzo e-mail valido.');
-        document.getElementById('e-mail').focus();
-        return;
-    }
-
-    /*
-     * Azienda
-     */
-    if (azienda.length < 2) {
-        alert('Inserisci il nome dell’azienda.');
-        document.getElementById('azienda').focus();
-        return;
-    }
-
-    /*
-     * Messaggio
-     */
-    if (messaggio.length > 0 && messaggio.length < 5) {
-        alert('Il messaggio è troppo breve.');
-        document.getElementById('messaggio').focus();
-        return;
-    }
-
-    /*
-     * Privacy
-     */
-    if (!privacy) {
-        alert('Devi accettare la presa visione dell’informativa sulla privacy.');
-        document.getElementById('privacy').focus();
-        return;
-    }
-
-    /*
-     * E-mail
-     */
-    const destinatario = 'info@esempio.it';
-
-    const oggetto = 'Richiesta di contatto dal sito';
-
-    const corpo =
-        'Richiesta di contatto dal sito\n\n' +
-        'NOME\n' +
-        nome + '\n\n' +
-        'COGNOME\n' +
-        cognome + '\n\n' +
-        'E-MAIL\n' +
-        email + '\n\n' +
-        'AZIENDA\n' +
-        azienda + '\n\n' +
-        'MESSAGGIO\n' +
-        (messaggio || '(nessun messaggio)');
-
-
-    const mailto =
-        'mailto:' + destinatario +
-        '?subject=' + encodeURIComponent(oggetto) +
-        '&body=' + encodeURIComponent(corpo);
-
-    window.location.href = mailto;
+        fetch('contatti.php', {
+            method: 'POST',
+            body: formData,
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+            .then(function (response) {
+                return response.json().then(function (data) {
+                    return { ok: response.ok, data: data };
+                });
+            })
+            .then(function (result) {
+                if (result.ok && result.data.success) {
+                    feedback.textContent = 'Richiesta inviata correttamente. Ti risponderemo al più presto.';
+                    feedback.classList.add('ok');
+                    form.reset();
+                } else {
+                    feedback.textContent = result.data.message || 'Si è verificato un errore. Riprova o scrivici su Whatsapp.';
+                    feedback.classList.add('errore');
+                }
+                feedback.style.display = 'block';
+            })
+            .catch(function () {
+                feedback.textContent = 'Si è verificato un errore di connessione. Riprova o scrivici su Whatsapp.';
+                feedback.classList.add('errore');
+                feedback.style.display = 'block';
+            })
+            .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
+            });
+    });
 });
 </script>

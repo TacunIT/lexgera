@@ -233,6 +233,10 @@ a#menu-4 {
 
         h2 {
             margin-bottom: 16px;
+            color: #4b3f91;
+            text-transform: uppercase;
+            font-size: clamp(1.75rem,2.6vw,2.25rem);
+            font-weight: 800;
 
             em {
                 font-style: normal;

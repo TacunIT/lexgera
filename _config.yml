@@ -1,6 +1,6 @@
-baseurl:        "/lexgera"
+baseurl:        ""
 destination:    "docs/"
-fqdn:           "tacun.it"
+fqdn:           "localhost"
 highlighter:     none
 url:            "https://dev.tacun.it"
 

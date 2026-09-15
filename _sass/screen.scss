@@ -1116,6 +1116,57 @@ BODY MAIN.privacy {
     padding: 60px 30px;
     text-align: justify;
     margin-inline: auto;
+
+    h2 {
+        @extend %section-heading;
+        color: $scuro;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        color: $viola;
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: left;
+        margin-top: 32px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        margin-bottom: 16px;
+    }
+
+    blockquote {
+        background: #ffffff;
+        border-left: 4px solid $viola;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 16px;
+    }
+
+    // Blocco dati del titolare (Sede, PEC, Telefono): stessa logica
+    // "card bianca su sfondo neutro" già usata in #contatti .form
+    #dati {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 20px;
+        margin-block: 16px;
+        line-height: 1.8;
+
+        label {
+            display: inline-block;
+            min-width: 70px;
+            color: $viola;
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    BODY MAIN.privacy {
+        width: 100%;
+        padding: 40px 20px;
+    }
 }
 
 .nero {

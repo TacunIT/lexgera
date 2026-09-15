@@ -1,3 +1,7 @@
+## 0.5.1 (September 15, 2026)
+  - Aggiornati indirizzi nella form contatti
+  - Generate pagine
+
 ## 0.5.0 (September 15, 2026)
   - Rimosso link a Instagram dal footer
   - Aggiornato menu header

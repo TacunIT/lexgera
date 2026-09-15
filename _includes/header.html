@@ -4,5 +4,59 @@
             <img id="logo-header" src="{{ '/assets/img/logo-lexgera-bianco.svg' | relative_url }}" alt="{{ t.azienda }}">
         </a>
     </div>
+
+    <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-top" aria-label="Apri il menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     {%- include menu.html -%}
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('menu-toggle');
+    var menu = document.getElementById('menu-top');
+    if (!header || !toggle || !menu) return;
+
+    function chiudiMenu() {
+        header.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function apriMenu() {
+        header.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', function () {
+        if (header.classList.contains('menu-open')) {
+            chiudiMenu();
+        } else {
+            apriMenu();
+        }
+    });
+
+    // Chiude il menu quando si sceglie una voce (utile su mobile,
+    // dove altrimenti resterebbe aperto dopo la navigazione)
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', chiudiMenu);
+    });
+
+    // Chiude il menu cliccando fuori dall'header
+    document.addEventListener('click', function (event) {
+        if (!header.contains(event.target)) {
+            chiudiMenu();
+        }
+    });
+
+    // Chiude il menu con il tasto Esc
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            chiudiMenu();
+        }
+    });
+});
+</script>

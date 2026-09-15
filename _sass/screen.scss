@@ -135,11 +135,86 @@ BODY > HEADER {
     gap: 2rem;
 }
 
+// Nascosto su desktop: compare solo sotto la soglia di collasso del menu
+#menu-toggle {
+    display: none;
+}
+
 a#menu-4 {
     background-color: $verde;
     display: inline-block;
     border-radius: 88px;
     padding: 8px 18px;
+}
+
+@media (max-width: 860px) {
+    #site-header {
+        position: relative;
+    }
+
+    #menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+    }
+
+    // Menu a tendina: chiuso di default (max-height: 0), aperto via
+    // classe .menu-open assegnata da JS su #site-header al click
+    #menu-top {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: $headerBgColor;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .25s ease;
+
+        a {
+            padding: 16px clamp(24px, 5vw, #{$gutter});
+            border-top: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        a#menu-4 {
+            background: transparent;
+            border-radius: 0;
+        }
+    }
+
+    #site-header.menu-open #menu-top {
+        max-height: 400px;   // sufficiente per contenere tutte le voci attuali
+    }
+
+    // Animazione hamburger -> X quando il menu è aperto
+    #site-header.menu-open #menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    #site-header.menu-open #menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #site-header.menu-open #menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
 // ---------------------------------------------------------------
@@ -397,6 +472,7 @@ a#menu-4 {
     #servizi {
         grid-template-columns: minmax(0, 600px);
         row-gap: 64px;
+        padding-block: 64px 80px;
     }
 }
 
@@ -460,10 +536,14 @@ a#menu-4 {
 }
 
 @media (max-width: 860px) {
-    #sezione-3 .corpo {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 32px;
+    #sezione-3 {
+        padding-block: 64px;
+
+        .corpo {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 32px;
+        }
     }
 }
 
@@ -529,10 +609,18 @@ a#menu-4 {
 }
 
 @media (max-width: 700px) {
-    #modello .linea {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding-block: 24px;
+    #modello {
+        padding-block: 64px;
+
+        > header {
+            margin-bottom: 40px;
+        }
+
+        .linea {
+            grid-template-columns: 1fr;
+            gap: 8px;
+            padding-block: 24px;
+        }
     }
 }
 
@@ -636,9 +724,16 @@ a#menu-4 {
 }
 
 @media (max-width: 860px) {
-    #chi-siamo .riga {
-        flex-direction: column;
-        gap: 40px;
+    #chi-siamo {
+        .corpo {
+            padding-block: 64px;
+            gap: 40px;
+        }
+
+        .riga {
+            flex-direction: column;
+            gap: 40px;
+        }
     }
 }
 
@@ -681,6 +776,10 @@ a#menu-4 {
         color: $bodyColor;
         border-radius: 30px;    // stimato, da confermare sul frame esterno
         padding: 40px;          // stimato
+
+        @media (max-width: 600px) {
+            padding: 24px;
+        }
 
         > p,
         > h4 {
@@ -883,10 +982,29 @@ a#menu-4 {
     }
 }
 
+@media (max-width: 1100px) {
+    #contatti .wrapper {
+        flex-wrap: wrap;
+
+        .cosa {
+            flex: 1 1 calc(50% - 8px);   // 2 per riga, coerente col gap di 16px già definito
+        }
+    }
+}
+
 @media (max-width: 860px) {
     #contatti {
+        .corpo {
+            gap: 64px;
+            padding-block: 64px 100px;
+        }
+
         .wrapper {
             flex-direction: column;
+
+            .cosa {
+                flex: 1 1 auto;
+            }
         }
 
         form .campi {

@@ -1,0 +1,204 @@
+
+
+
+<!DOCTYPE html>
+<html lang="it"><head>
+    <title>Privacy policy</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://dev.tacun.it/lexgera/privacy.html" />
+    <link rel="icon" href="/lexgera/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/lexgera/assets/css/main.css" />
+    <meta name="description" content="Politica di protezione dei dati personali" />
+    <meta name="keyword" content="legge, avvocati, privacy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!-- Open Graph / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Lexgera">
+    <meta property="og:description" content="Politica di protezione dei dati personali" />
+    <meta property="og:image" content="/lexgera/assets/img/privacy.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Lexgera" />
+    <meta property="og:title" content="Privacy policy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dev.tacun.it/lexgera/privacy.html" />
+</head>
+<body id=""><header id="site-header">
+    <div id="logo">
+        <a href="/lexgera/">
+            <img id="logo-header" src="/lexgera/assets/img/logo-lexgera-bianco.svg" alt="Lexgera">
+        </a>
+    </div>
+
+    <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-top" aria-label="Apri il menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+
+
+
+
+<nav id="menu-top">
+    <a id="menu-1"
+       href="/lexgera/#servizi"
+       class="">
+      servizi
+    </a>
+    <a id="menu-2"
+       href="/lexgera/#modello"
+       class="">
+      come ti supportiamo
+    </a>
+    <a id="menu-3"
+       href="/lexgera/#chi-siamo"
+       class="">
+      chi siamo
+    </a>
+    <a id="menu-4"
+       href="/lexgera/#contatti"
+       class="">
+      parlaci di te
+    </a>
+    <a id="menu-5"
+       target="wa"
+       href="https://wa.me/393404204768"
+       class="">
+      whatsapp
+    </a>
+</nav>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('menu-toggle');
+    var menu = document.getElementById('menu-top');
+    if (!header || !toggle || !menu) return;
+
+    function chiudiMenu() {
+        header.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function apriMenu() {
+        header.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', function () {
+        if (header.classList.contains('menu-open')) {
+            chiudiMenu();
+        } else {
+            apriMenu();
+        }
+    });
+
+    // Chiude il menu quando si sceglie una voce (utile su mobile,
+    // dove altrimenti resterebbe aperto dopo la navigazione)
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', chiudiMenu);
+    });
+
+    // Chiude il menu cliccando fuori dall'header
+    document.addEventListener('click', function (event) {
+        if (!header.contains(event.target)) {
+            chiudiMenu();
+        }
+    });
+
+    // Chiude il menu con il tasto Esc
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            chiudiMenu();
+        }
+    });
+});
+</script>
+<main class="privacy">
+    
+<section id="privacy">
+
+    <h2>Privacy</h2>
+
+    Ai sensi del Regolamento (UE) 2016/679 (di seguito “Regolamento”), questa pagina descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito <b>LEXGERA</b>, accessibili per via telematica unicamente ai seguenti indirizzi:
+
+        <blockquote>
+            <b>tacun.it</b>
+        </blockquote>
+
+    Le presenti informazioni non riguardano altri siti, pagine o servizi online raggiungibili tramite link ipertestuali eventualmente pubblicati nei siti ma riferiti a risorse esterne.
+
+    <h3>Titolare del trattamento</h3>
+    A seguito della consultazione dei siti sopra elencati possono essere trattati dati relativi a persone fisiche identificate o identificabili.<br />
+    Titolare del trattamento (di seguito anche “titolare”) è:
+
+        <div id="dati">
+            Avv. Cristina Marigliano<br />
+            <label>Sede</label> Viale Carso 67, Roma<br />
+            <label>PEC</label> cristinamarigliano@ordineavvocatiroma.org<br />
+            <label>Telefono</label> +39 06 3723461-861
+        </div>
+
+    <h3>Tipi di dati trattati e finalità del trattamento</h3>
+    I sistemi informatici e le procedure software preposte al funzionamento di questo sito acquisiscono, nel corso del loro normale esercizio, alcuni dati personali la cui trasmissione è implicita nell’uso dei protocolli di comunicazione della Internet.
+    In questa categoria di dati rientrano: gli indirizzi IP o i nomi a dominio dei computer e dei terminali utilizzati dagli utenti, gli indirizzi in notazione URI/URL (<i>Uniform Resource Identifier/Locator</i>) delle risorse richieste, l’orario della richiesta, il metodo utilizzato nel sottoporre la richiesta al server, la dimensione del file ottenuto in risposta, il codice numerico indicante lo stato della risposta data dal server (buon fine, errore, ecc.) e altri parametri relativi al sistema operativo e all’ambiente informatico dell’utente.
+    Tali dati, necessari per la fruizione dei servizi web, vengono anche trattati allo scopo di:
+
+        - ottenere informazioni statistiche sull’uso dei servizi (pagine più visitate, numero di visitatori per fascia oraria o giornaliera, aree geografiche di provenienza, ecc.);
+
+        - controllare il corretto funzionamento dei servizi offerti.
+
+    I dati di navigazione non persistono all'interno del sistema per più di sette giorni (salve eventuali necessità di accertamento di reati da parte dell’Autorità giudiziaria).
+
+    <h3>Dati comunicati dall’utente</h3>
+
+    L’invio facoltativo, esplicito e volontario di messaggi tramite il link presente in home-page comporta l’acquisizione dei dati di contatto del mittente, nonché di tutti i dati personali inclusi nelle comunicazioni.
+    Tali informazioni, spontaneamente fornite dall’utente, saranno utilizzate unicamente per fornire riscontro alle richieste di quest’ultimo.
+
+    <h3>Cookie e altri sistemi di tracciamento</h3>
+
+    Non viene fatto uso di cookie per la profilazione degli utenti e non vengono impiegati altri metodi di tracciamento.
+
+    <h3>Destinatari dei dati</h3>
+
+    Sono destinatari dei dati raccolti a seguito della consultazione dei siti sopra elencati i soggetti, designati quali responsabili del trattamento, che forniscono specifici servizi necessari allo svolgimento delle operazioni di trattamento da parte del titolare del trattamento o che eseguono operazioni di trattamento per conto di quest’ultimo.
+    I dati personali raccolti sono, altresì, trattati dai dipendenti del titolare, i quali agiscono sulla base di specifiche istruzioni fornite in ordine a finalità e modalità del trattamento medesimo.
+
+    <h3>Diritti degli interessati</h3>
+    Gli interessati, nei casi previsti, hanno il diritto di ottenere dal Titolare l’accesso ai propri dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento che li riguarda o di opporsi al trattamento (artt. 15 e ss. del Regolamento).
+    L’apposita istanza può essere presentata contattando il titolare ai recapiti indicati nel presente documento.
+
+    <h3>Diritto di reclamo</h3>
+    Gli interessati che ritengono che il trattamento dei dati personali a loro riferiti effettuato attraverso questo sito avvenga in violazione di quanto previsto dal Regolamento hanno il diritto di proporre reclamo al Garante, come previsto dall’art. 77 del Regolamento stesso, o di adire le opportune sedi giudiziarie (art. 79 del Regolamento).<br />  
+
+</section>
+
+  </main><footer>
+    <div class="riga">
+        <div class="brand">
+            <img id="logo-footer" src="/lexgera/assets/img/logo-lexgera-bianco.svg" alt="Lexgera">
+            <p>Alta competenza, accessibile</p>
+        </div>
+        <!--
+        <a class="social" href="https://instagram.com/lexgera" aria-label="Instagram">
+            <img src="/assets/icon/instagram.svg" alt="">
+        </a>
+        -->
+    </div>
+
+    <div class="riga">
+        <address>
+            Sede principale: Viale Carso 67 - Roma 00195<br>
+            <a href="mailto:info@legera.it">info@legera.it</a>
+        </address>
+        <p class="legal">
+            <a href="/lexgera/privacy.html">Cookie e Privacy Policy</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1111,17 +1111,15 @@ BODY MAIN.privacy {
     min-width: 360px;
     max-width: 630px;
     color: $bodyColor;
-    background: $neutro;
-    border-radius: 30px;
-    padding: 60px 30px;
     text-align: justify;
     margin-inline: auto;
+    padding-block: 100px;   // stessa spaziatura verticale delle altre sezioni (#modello, #sezione-3, ecc.)
 
     h2 {
         @extend %section-heading;
         color: $scuro;
-        text-align: left;
-        margin-bottom: 24px;
+        text-align: center;
+        margin-bottom: 16px;
     }
 
     h3 {
@@ -1145,7 +1143,7 @@ BODY MAIN.privacy {
     }
 
     // Blocco dati del titolare (Sede, PEC, Telefono): stessa logica
-    // "card bianca su sfondo neutro" già usata in #contatti .form
+    // "card bianca" già usata in #contatti .form
     #dati {
         background: #ffffff;
         border-radius: 16px;
@@ -1165,7 +1163,8 @@ BODY MAIN.privacy {
 @media (max-width: 860px) {
     BODY MAIN.privacy {
         width: 100%;
-        padding: 40px 20px;
+        padding-block: 64px;
+        padding-inline: 20px;
     }
 }
 

@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // --- Configurazione ---
-$destinatario = 'info@tacun.it';
-$mittenteSito = 'noreply@tacun.it'; // deve essere una casella sul dominio che invia (per SPF/deliverability)
+$destinatario = 'info@lexgera.it';
+$mittenteSito = 'noreply@lexgera.it'; // deve essere una casella sul dominio che invia (per SPF/deliverability)
 
 // --- Honeypot anti-spam: se il campo nascosto è compilato, è un bot ---
 if (!empty($_POST['sito-web'])) {

@@ -1138,6 +1138,7 @@ BODY MAIN.privacy {
     width: 61%;
     min-width: 360px;
     max-width: 630px;
+    overflow-wrap: anywhere;   // la PEC in #dati è più larga dello schermo su mobile
     color: $bodyColor;
     text-align: justify;
     margin-inline: auto;
@@ -1191,6 +1192,7 @@ BODY MAIN.privacy {
 @media (max-width: 860px) {
     BODY MAIN.privacy {
         width: 100%;
+        min-width: 0;
         padding-block: 64px;
         padding-inline: 20px;
     }

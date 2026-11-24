@@ -18,6 +18,7 @@
 
 HTML {
     font-size: $fontSize;
+    scroll-padding-top: 80px;
 }
 
 BODY {
@@ -101,6 +102,9 @@ SECTION {
 // l'<header> interno a #servizi e altre sezioni future.
 BODY > HEADER {
     @extend %wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     background: $headerBgColor;
     color:      $headerColor;
@@ -116,7 +120,6 @@ BODY > HEADER {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    position: fixed;
 }
 
 #logo,
@@ -149,10 +152,6 @@ a#menu-4 {
 }
 
 @media (max-width: 860px) {
-    #site-header {
-        position: relative;
-    }
-
     #menu-toggle {
         display: flex;
         flex-direction: column;

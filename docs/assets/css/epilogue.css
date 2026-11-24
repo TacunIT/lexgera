@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Epilogue";
+  src: url('../fonts/Epilogue-VariableFont_wght.ttf') format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Epilogue";
+  src: url('../fonts/Epilogue-Italic-VariableFont_wght.ttf') format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}

@@ -1,8 +1,9 @@
 @use "lexgera" as *;
 
-/* @import CSS nativo: @use non produce output, quindi questa resta
-   la prima regola del CSS compilato — ordine valido. */
+/* @import CSS nativo: @use non produce output, quindi queste restano
+   le prime regole del CSS compilato — ordine valido. */
 @import url('bevellier.css');
+@import url('epilogue.css');
 
 // ---------------------------------------------------------------
 // Reset
@@ -41,6 +42,13 @@ NAV A {
     text-decoration: none;
 }
 
+// I controlli dei form non ereditano il font di default
+input,
+textarea,
+button {
+    font-family: inherit;
+}
+
 LABEL {
     font-weight: bold;
 }
@@ -67,6 +75,7 @@ IMG {
 // ---------------------------------------------------------------
 
 %section-heading {
+    font-family: $headingFont;
     font-size: clamp(1.75rem, 2.6vw, 2.25rem);
     font-weight: 800;
     line-height: 1.15;
@@ -237,6 +246,7 @@ a#menu-4 {
         align-items: flex-start;
 
         h1 {
+            font-family: $headingFont;
             font-size: clamp(2rem, 3.2vw, 2.75rem);
             font-weight: 800;
             line-height: 1.1;

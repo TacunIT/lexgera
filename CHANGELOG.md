@@ -1,3 +1,13 @@
+## 0.5.2 (November 24, 2026)
+  - Aggiunto font Epilogue
+  - Revisioni minori al CSS
+  - Revisioni minori
+  - Rigenrati i file in www
+  - modificato file _config
+  - Aggiornato stile blockquote  privacy
+  - Aggiornato stile titoli privacy
+  - Aggiornato stile privacy
+
 ## 0.5.1 (September 15, 2026)
   - Aggiornati indirizzi nella form contatti
   - Generate pagine

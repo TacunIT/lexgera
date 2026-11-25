@@ -146,6 +146,10 @@ BODY > HEADER {
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    a {
+        font-size: 1rem;
+    }
 }
 
 // Nascosto su desktop: compare solo sotto la soglia di collasso del menu
@@ -159,6 +163,24 @@ a#menu-4 {
     border-radius: 88px;
     padding: 8px 18px;
     font-size: 1rem;
+}
+
+// Stessa pillola di #menu-4: il bordo di 1px è compensato nel padding,
+// così l'header resta alto 70px
+a#menu-5 {
+    display: inline-block;
+    border: 1px solid $verde;
+    border-radius: 88px;
+    padding: 7px 17px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+// Desktop stretto: voci più vicine, così non vanno a capo
+@media (min-width: 861px) and (max-width: 1100px) {
+    #menu-top {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 860px) {
@@ -205,6 +227,13 @@ a#menu-4 {
 
         a#menu-4 {
             background: transparent;
+            border-radius: 0;
+        }
+
+        // nella tendina resta una voce normale, senza pillola
+        a#menu-5 {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, .15);
             border-radius: 0;
         }
     }
@@ -315,7 +344,7 @@ a#menu-4 {
     column-gap: 30px;
     row-gap: 100px;            // stacco header → griglia diverso dal gap tra card
     padding-block: 100px 120px;
-    background: var(--Neutro, $neutro);
+    background: $sfondo-chiaro;
 
     // header interno alla sezione: eyebrow + h2 + intro.
     // reset esplicito perché BODY > HEADER non lo tocca più,
@@ -327,7 +356,7 @@ a#menu-4 {
         .eyebrow {
             display: block;
             color: $viola;
-            font-size: .85rem;
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             letter-spacing: .04em;
             margin-bottom: 8px;
         }
@@ -343,6 +372,7 @@ a#menu-4 {
         }
 
         .intro {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             max-width: 46ch;
             margin-inline: auto;
         }
@@ -507,6 +537,7 @@ a#menu-4 {
 // ---------------------------------------------------------------
 
 #sezione-3 {
+    background: linear-gradient(to bottom, $sfondo-chiaro, #ffffff);
     padding-block: 100px;   // da confermare: non ancora visto nel pannello
 
     .corpo {
@@ -587,7 +618,7 @@ a#menu-4 {
 
         .eyebrow {
             color: $viola;
-            font-size: .85rem;
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             letter-spacing: .04em;
             margin-bottom: 8px;
         }
@@ -598,6 +629,7 @@ a#menu-4 {
         }
 
         .intro {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             max-width: 46ch;
             margin-inline: auto;
             color: $bodyColor;
@@ -656,7 +688,7 @@ a#menu-4 {
 // ---------------------------------------------------------------
 
 #chi-siamo {
-    background: $neutro;   // stessa area lavanda chiara delle altre sezioni
+    background: $sfondo-chiaro;
 
     // Reset del padding ereditato da "BODY > SECTION": qui la CTA (.cta)
     // deve toccare i bordi del viewport, quindi il limite di larghezza
@@ -679,7 +711,7 @@ a#menu-4 {
 
         .eyebrow {
             color: $viola;
-            font-size: .85rem;
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             letter-spacing: .04em;
             margin-bottom: 8px;
         }
@@ -695,6 +727,7 @@ a#menu-4 {
         }
 
         .intro {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             color: $bodyColor;
         }
     }
@@ -790,6 +823,7 @@ a#menu-4 {
         }
 
         .intro {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
             max-width: 46ch;
             margin-inline: auto;
             opacity: .9;
@@ -805,6 +839,7 @@ a#menu-4 {
         border-radius: 30px;    // stimato, da confermare sul frame esterno
         padding: 40px;          // stimato
         max-width: 1024px;
+        margin-inline: auto;
 
         @media (max-width: 600px) {
             padding: 24px;
@@ -862,14 +897,15 @@ a#menu-4 {
         }
 
         h4 {
-            color: $scuro;
-            font-size: .95rem;
+            color: $nero;
+            font-size: .875rem;
             margin-bottom: 0;
         }
 
         p {
-            color: $bodyColor;
-            font-size: .85rem;
+            color: $testo-form;
+            font-size: .75rem;
+            font-weight: 400;
             line-height: 1.4;
         }
 
@@ -888,8 +924,8 @@ a#menu-4 {
         gap: 16px;
 
         h3 {
-            color: $scuro;
-            font-size: 1.15rem;
+            color: $nero;
+            font-size: 1.25rem;
         }
 
         // Campo honeypot anti-spam: invisibile per le persone,
@@ -933,7 +969,8 @@ a#menu-4 {
             color: $bodyColor;
 
             &::placeholder {
-                color: rgba(51, 51, 51, .5);
+                color: $testo-form;
+                font-size: .75rem;
             }
         }
 
@@ -969,8 +1006,8 @@ a#menu-4 {
 
             label {
                 font-weight: normal;
-                font-size: .85rem;
-                color: $bodyColor;
+                font-size: .875rem;
+                color: $nero;
 
                 &::after {
                     content: none;
@@ -1007,7 +1044,9 @@ a#menu-4 {
 
         #urgente {
             text-align: right;
-            font-size: .9rem;
+            font-size: .875rem;
+            font-weight: 700;
+            color: $nero;
 
             a {
                 color: $verde;
@@ -1065,6 +1104,7 @@ BODY > FOOTER {
 
     background: $nero;
     color: #ffffff;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1092,7 +1132,7 @@ BODY > FOOTER {
 
         p {
             color: $testi-scuro-2;
-            font-size: .9rem;
+            font-size: 1rem;
             line-height: 1.3;
         }
     }
@@ -1104,7 +1144,7 @@ BODY > FOOTER {
 
     address {
         font-style: normal;
-        font-size: .9rem;
+        font-size: 1rem;
         line-height: 1.6;
 
         a {

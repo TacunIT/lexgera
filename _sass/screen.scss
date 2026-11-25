@@ -176,6 +176,19 @@ a#menu-5 {
     font-weight: 700;
 }
 
+// Icona come maschera: prende il colore del testo
+a#menu-5::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: .5rem;
+    vertical-align: -0.15em;
+    background-color: currentColor;
+    -webkit-mask: url("../icon/telefono.svg") no-repeat center / contain;
+    mask: url("../icon/telefono.svg") no-repeat center / contain;
+}
+
 // Desktop stretto: voci più vicine, così non vanno a capo
 @media (min-width: 861px) and (max-width: 1100px) {
     #menu-top {

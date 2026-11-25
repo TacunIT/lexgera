@@ -1,8 +1,8 @@
-baseurl:        ""
-destination:    "www/"
-fqdn:           "www.lexgera.it"
+baseurl:        "/lexgera"
+destination:    "docs/"
+fqdn:           "tacunit.github.io"
 highlighter:     none
-url:            "https://www.lexgera.it"
+url:            "https://tacunit.github.io"
 
 sass:
     style: compressed

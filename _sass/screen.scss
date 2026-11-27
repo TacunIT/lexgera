@@ -1223,7 +1223,7 @@ BODY MAIN.privacy {
     max-width: 630px;
     overflow-wrap: anywhere;   // la PEC in #dati è più larga dello schermo su mobile
     color: $bodyColor;
-    text-align: justify;
+    text-align: left;
     margin-inline: auto;
     padding-block: 100px;   // stessa spaziatura verticale delle altre sezioni (#modello, #sezione-3, ecc.)
 

@@ -883,11 +883,14 @@ a#menu-5::before {
     }
 
     .cosa {
+        $cosa-gap:   8px;
+        $cosa-icona: 28px;
+
         flex: 1 1 0;
         min-width: 0;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: $cosa-gap;
         padding: 20px;          // confermato dal pannello
         border: 1px solid $campi-border;
         border-radius: 16px;    // stimato
@@ -928,11 +931,17 @@ a#menu-5::before {
         }
 
         img {
-            width: 28px;
-            height: 28px;
+            width: $cosa-icona;
+            height: $cosa-icona;
             object-fit: contain;
             align-self: flex-end;
             order: -1;           // icona in alto a destra, sopra al testo
+        }
+
+        // Card senza icona ("Altro"): il testo parte alla stessa altezza
+        // delle altre, recuperando lo spazio di icona + gap
+        &:not(:has(> img)) > div {
+            margin-top: $cosa-icona + $cosa-gap;
         }
     }
 

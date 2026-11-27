@@ -1,3 +1,27 @@
+## 0.5.3 (November 27, 2026)
+  - Applicate le risposte della grafica del 27/11/2026, desktop e mobile:
+    il tag grafica-2026-11-27 le contiene alla lettera, le correzioni e le
+    integrazioni successive sono descritte in _note/deviazioni-grafica.md
+  - Header sticky con scroll-padding per i link ad ancora
+  - Aggiunto Epilogue affiancato a Bevellier; titoli in Bevellier-Variable Semibold
+  - Allineati dimensioni e colori al foglio di fine tuning
+  - Colori di titoli di sezione, parole in evidenza, righe del modello e body base
+  - Didascalie in maiuscolo da CSS; microcopy alle card servizi
+  - Icone SVG nelle card dei servizi e nelle card del form contatti
+  - Card "Altro" del form senza mascotte, testo allineato alle altre card
+  - Icona telefono piena e bianca nel bottone WhatsApp; grafia "WhatsApp" nei testi
+  - Favicon complete, apple-touch-icon e site.webmanifest
+  - og:image con URL assoluto e immagine predefinita; meta keywords corretto
+  - Link alla privacy nel consenso del form; refusi nel modello
+  - Privacy: testo allineato a sinistra, riquadro del titolare in griglia
+    (una colonna sotto i 480px), PEC con punti di a capo, niente scroll orizzontale
+  - Tipografia mobile (titoli 48px, hero 60px) senza salti fra 860 e 861px
+  - Header fra 861 e 900px: gap del menu ridotto
+  - Riga "urgente" del form: "Scrivici su WhatsApp" non si spezza
+  - Corretti i link assoluti che su Pages uscivano dal sito; rimosso CNAME
+  - Rimossi file inutilizzati (form-contatti.html, layout .old.html, immagini e icone sostituite)
+  - Rigenerati i file in docs per il collaudo
+
 ## 0.5.2 (November 24, 2026)
   - Aggiunto font Epilogue
   - Revisioni minori al CSS

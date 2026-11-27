@@ -5,7 +5,6 @@ lang:        "it"
 slug:        "privacy"
 layout:      "pagina"
 permalink:   "/privacy.html"
-og_image:    "/assets/img/privacy.png"
 keyword:     "legge, avvocati, privacy"
 excerpt:     "Politica di protezione dei dati personali"
 ---

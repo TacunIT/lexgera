@@ -81,6 +81,12 @@ IMG {
     line-height: 1.15;
     text-transform: uppercase;
     margin-bottom: 16px;
+
+    // Mobile: vale per tutti gli h2 che estendono il placeholder
+    @media (max-width: 860px) {
+        font-size: 3rem;    // 48px
+        line-height: 1;
+    }
 }
 
 // Didascalie sopra i titoli di sezione: sempre in maiuscolo
@@ -341,6 +347,14 @@ a#menu-5::before {
         align-items: flex-start;
         gap: 48px;
         padding-block: 64px;
+
+        // 60px, ma la parola più larga ("COMPETENZA,", ~284px a 60px)
+        // non entra a 320px (~272px utili): 17.5vw la riduce a 56px
+        // sotto i ~343px di viewport, sopra resta 60px.
+        .testi h1 {
+            font-size: min(3.75rem, 17.5vw);
+            line-height: 1;
+        }
     }
 }
 
@@ -547,6 +561,15 @@ a#menu-5::before {
     }
 }
 
+@media (max-width: 860px) {
+    #servizi > header {
+        .eyebrow,
+        .intro {
+            font-size: 1.5rem;   // 24px
+        }
+    }
+}
+
 @media (max-width: 700px) {
     #servizi {
         grid-template-columns: minmax(0, 600px);
@@ -694,6 +717,15 @@ a#menu-5::before {
     }
 }
 
+@media (max-width: 860px) {
+    #modello > header {
+        .eyebrow,
+        .intro {
+            font-size: 1.5rem;   // 24px
+        }
+    }
+}
+
 @media (max-width: 700px) {
     #modello {
         padding-block: 64px;
@@ -821,6 +853,13 @@ a#menu-5::before {
         .riga {
             flex-direction: column;
             gap: 40px;
+        }
+
+        header {
+            .eyebrow,
+            .intro {
+                font-size: 1.5rem;   // 24px
+            }
         }
     }
 }
@@ -1109,6 +1148,10 @@ a#menu-5::before {
             padding-block: 64px 100px;
         }
 
+        > .corpo > header .intro {
+            font-size: 1.5rem;   // 24px
+        }
+
         .wrapper {
             flex-direction: column;
 
@@ -1266,6 +1309,7 @@ BODY MAIN.privacy {
         label {
             display: inline-block;
             min-width: 70px;
+            padding-right: 8px;   // come il gap fra casella e testo in #contatti .consenso: "Telefono" supera i 70px
             color: $viola;
             font-weight: 700;
         }

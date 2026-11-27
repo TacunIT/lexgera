@@ -376,11 +376,11 @@ a#menu-5::before {
 
         h2 {
             @extend %section-heading;
-            color: $scuro;   // era hardcoded #4b3f91 (stesso valore, ora collegato alla palette)
+            color: $viola;
 
             em {
                 font-style: normal;
-                color: $viola;
+                color: $indaco;
             }
         }
 
@@ -587,16 +587,16 @@ a#menu-5::before {
 
         h2 {
             @extend %section-heading;
-            color: $scuro;
+            color: $viola;
 
             span {
-                color: $viola;   // aggiornato: nello screenshot è il viola medio già in palette, non $indaco
+                color: $indaco;
             }
         }
 
         p {
             font-size: 1.25rem;
-            color: $testo-chiaro;
+            color: $testo-secondario;
             line-height: 1.6;
             margin-bottom: 16px;
 
@@ -643,7 +643,7 @@ a#menu-5::before {
 
         h2 {
             @extend %section-heading;
-            color: $scuro;      // stesso PLACEHOLDER della sezione 3
+            color: $viola;
         }
 
         .intro {
@@ -672,13 +672,17 @@ a#menu-5::before {
         }
 
         h4 {
-            color: $scuro;     // stesso PLACEHOLDER; verifica se varia riga per riga (vedi nota sotto)
+            color: $viola;     // righe dispari (1ª, 3ª, 5ª)
             font-size: 1.875rem;
             font-weight: 700;
         }
 
+        &:nth-child(even) h4 {
+            color: $indaco;    // righe pari (2ª, 4ª)
+        }
+
         p {
-            color: $testo-chiaro;
+            color: $testo-secondario;
             font-size: 1.25rem;
             line-height: 1.6;
         }
@@ -736,11 +740,11 @@ a#menu-5::before {
 
         h2 {
             @extend %section-heading;
-            color: $scuro;
+            color: $viola;
 
             em {
                 font-style: normal;
-                color: $viola;
+                color: $indaco;
             }
         }
 
@@ -765,7 +769,7 @@ a#menu-5::before {
         gap: 30px;             // confermato dal pannello (Frame 751: gap 30px)
 
         p {
-            color: $testo-chiaro;
+            color: $testo-secondario;
             font-size: 1.25rem;
             line-height: 1.6;
         }

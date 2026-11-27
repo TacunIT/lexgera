@@ -15,7 +15,8 @@ $campi-border:    #E4E1F5;         // PLACEHOLDER — sostituisci con l'hex real
 $nero:            #030303;         // confermato dal pannello
 $testi-scuro-2:   rgba(255, 255, 255, .65);   // PLACEHOLDER — "Testi secondario su sfondo scuro", stima funzionale
 $testo-chiaro:    #827A94;
-$testo-form:      #5B5970;
+$testo-secondario: #5B5970;       // body base (paragrafi da 20px)
+$testo-form:      $testo-secondario;
 $sfondo-chiaro:   #EFEFFF;
 
 // Colori di base

@@ -110,7 +110,7 @@
                         Hai una questione urgente? Scrivici su
                         <a href="{{ menu_5_url }}"
                            target="wa"
-                           title="Scrivici su Whatsapp">Whatsapp</a>
+                           title="Scrivici su WhatsApp">WhatsApp</a>
                     </p>
                 </div>
             </form>
@@ -174,13 +174,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     feedback.classList.add('ok');
                     form.reset();
                 } else {
-                    feedback.textContent = result.data.message || 'Si è verificato un errore. Riprova o scrivici su Whatsapp.';
+                    feedback.textContent = result.data.message || 'Si è verificato un errore. Riprova o scrivici su WhatsApp.';
                     feedback.classList.add('errore');
                 }
                 feedback.style.display = 'block';
             })
             .catch(function () {
-                feedback.textContent = 'Si è verificato un errore di connessione. Riprova o scrivici su Whatsapp.';
+                feedback.textContent = 'Si è verificato un errore di connessione. Riprova o scrivici su WhatsApp.';
                 feedback.classList.add('errore');
                 feedback.style.display = 'block';
             })

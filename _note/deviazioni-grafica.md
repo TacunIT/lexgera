@@ -25,5 +25,5 @@ Riferimento: risposte della grafica del 27/11/2026. Il tag `grafica-2026-11-27` 
 2. Icone del form "Di cosa hai bisogno?": sostituite con le stesse icone delle card dei servizi; le vecchie `contatti-1..4.png` rimosse.
 3. Icona telefono "piena": fill e stroke dello stesso colore, per mantenere dimensioni e angoli arrotondati dell'icona Lucide originale.
 4. Voce di menu "whatsapp" in minuscolo come le altre voci; "WhatsApp" con la grafia corretta nei testi.
-5. Riquadro del titolare nella privacy: spazio fra etichette e valori.
+5. Riquadro del titolare nella privacy: "Telefono" toccava il numero. Il markup è ora una lista di definizioni (`dl`/`dt`/`dd`) in griglia (`grid-template-columns: max-content 1fr; column-gap: 8px`): la colonna delle etichette è larga quanto "Telefono" più 8px e i valori di Sede, PEC e Telefono partono tutti dallo stesso punto; la PEC lunga va a capo nella sua colonna (`min-width: 0` sui `dd`).
 6. Testi da 16px delle card dei servizi lasciati a #827A94 (la grafica ha indicato #5B5970 solo per il body base).

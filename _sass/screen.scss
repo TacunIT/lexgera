@@ -1277,12 +1277,28 @@ BODY MAIN.privacy {
         margin-block: 16px;
         line-height: 1.8;
 
-        label {
-            display: inline-block;
-            min-width: 70px;
-            padding-right: 8px;   // come il gap fra casella e testo in #contatti .consenso: "Telefono" supera i 70px
+        // nome del titolare: nessuno stacco in più rispetto alle righe sotto
+        p {
+            margin: 0;
+        }
+
+        // etichette in colonna larga quanto la più lunga ("Telefono"),
+        // così tutti i valori partono dallo stesso punto
+        dl {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            column-gap: 8px;
+            margin: 0;
+        }
+
+        dt {
             color: $viola;
             font-weight: 700;
+        }
+
+        dd {
+            margin: 0;       // il browser mette 40px a sinistra
+            min-width: 0;    // la PEC lunga va a capo dentro la colonna
         }
     }
 }

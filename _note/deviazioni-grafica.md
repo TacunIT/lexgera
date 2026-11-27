@@ -29,4 +29,4 @@ Riferimento: risposte della grafica del 27/11/2026. Il tag `grafica-2026-11-27` 
 6. Testi da 16px delle card dei servizi lasciati a #827A94 (la grafica ha indicato #5B5970 solo per il body base).
 7. Header fra 861 e 900px: gap fra le voci del menu ridotto a .75rem per lasciare almeno 28px fra logo e menu.
 8. Riga "urgente" del form: "Scrivici su WhatsApp" non si spezza; su mobile allineata a sinistra.
-9. PEC nella privacy: a capo dopo la "@".
+9. PEC nella privacy: a capo dopo la "@" e prima di ".org"; sotto i 480px etichette sopra i valori.

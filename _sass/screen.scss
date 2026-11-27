@@ -1317,6 +1317,17 @@ BODY MAIN.privacy {
             margin: 0;       // il browser mette 40px a sinistra
             min-width: 0;    // la PEC lunga va a capo dentro la colonna
         }
+
+        // Schermi molto stretti: una sola colonna, etichetta sopra il valore
+        @media (max-width: 480px) {
+            dl {
+                grid-template-columns: 1fr;
+            }
+
+            dd:not(:last-child) {
+                margin-bottom: 8px;   // stacco prima dell'etichetta successiva
+            }
+        }
     }
 }
 

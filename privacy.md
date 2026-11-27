@@ -31,7 +31,7 @@ excerpt:     "Politica di protezione dei dati personali"
             <p>Avv. Cristina Marigliano</p>
             <dl>
                 <dt>Sede</dt>     <dd>Viale Carso 67, Roma</dd>
-                <dt>PEC</dt>      <dd>cristinamarigliano@<wbr>ordineavvocatiroma.org</dd>
+                <dt>PEC</dt>      <dd>cristinamarigliano@<wbr>ordineavvocatiroma<wbr>.org</dd>
                 <dt>Telefono</dt> <dd>+39 06 3723461-861</dd>
             </dl>
         </div>

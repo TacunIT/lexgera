@@ -352,7 +352,7 @@ a#menu-5::before {
         // non entra a 320px (~272px utili): 17.5vw la riduce a 56px
         // sotto i ~343px di viewport, sopra resta 60px.
         .testi h1 {
-            font-size: 3.75rem;
+            font-size: min(3.75rem, 17.5vw);
             line-height: 1;
         }
     }

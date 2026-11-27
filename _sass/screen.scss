@@ -76,7 +76,7 @@ IMG {
 
 %section-heading {
     font-family: $headingFont;
-    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-size: clamp(3rem, 5vw, 3.75rem);
     font-weight: 600;   // Bevellier Semibold
     line-height: 1.15;
     text-transform: uppercase;
@@ -301,7 +301,7 @@ a#menu-5::before {
 
         h1 {
             font-family: $headingFont;
-            font-size: clamp(2rem, 6vw, 5.3125rem);
+            font-size: clamp(3.75rem, 6vw, 5.3125rem);
             font-weight: 600;   // Bevellier Semibold
             line-height: 1.1;
             text-transform: uppercase;
@@ -388,7 +388,7 @@ a#menu-5::before {
         .eyebrow {
             display: block;
             color: $viola;
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             letter-spacing: .04em;
             margin-bottom: 8px;
         }
@@ -404,7 +404,7 @@ a#menu-5::before {
         }
 
         .intro {
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             max-width: 46ch;
             margin-inline: auto;
         }
@@ -561,15 +561,6 @@ a#menu-5::before {
     }
 }
 
-@media (max-width: 860px) {
-    #servizi > header {
-        .eyebrow,
-        .intro {
-            font-size: 1.5rem;   // 24px
-        }
-    }
-}
-
 @media (max-width: 700px) {
     #servizi {
         grid-template-columns: minmax(0, 600px);
@@ -664,7 +655,7 @@ a#menu-5::before {
 
         .eyebrow {
             color: $viola;
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             letter-spacing: .04em;
             margin-bottom: 8px;
         }
@@ -675,7 +666,7 @@ a#menu-5::before {
         }
 
         .intro {
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             max-width: 46ch;
             margin-inline: auto;
             color: $bodyColor;
@@ -713,15 +704,6 @@ a#menu-5::before {
             color: $testo-secondario;
             font-size: 1.25rem;
             line-height: 1.6;
-        }
-    }
-}
-
-@media (max-width: 860px) {
-    #modello > header {
-        .eyebrow,
-        .intro {
-            font-size: 1.5rem;   // 24px
         }
     }
 }
@@ -770,7 +752,7 @@ a#menu-5::before {
 
         .eyebrow {
             color: $viola;
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             letter-spacing: .04em;
             margin-bottom: 8px;
         }
@@ -786,7 +768,7 @@ a#menu-5::before {
         }
 
         .intro {
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             color: $bodyColor;
         }
     }
@@ -854,13 +836,6 @@ a#menu-5::before {
             flex-direction: column;
             gap: 40px;
         }
-
-        header {
-            .eyebrow,
-            .intro {
-                font-size: 1.5rem;   // 24px
-            }
-        }
     }
 }
 
@@ -889,7 +864,7 @@ a#menu-5::before {
         }
 
         .intro {
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             max-width: 46ch;
             margin-inline: auto;
             opacity: .9;
@@ -1146,10 +1121,6 @@ a#menu-5::before {
         .corpo {
             gap: 64px;
             padding-block: 64px 100px;
-        }
-
-        > .corpo > header .intro {
-            font-size: 1.5rem;   // 24px
         }
 
         .wrapper {

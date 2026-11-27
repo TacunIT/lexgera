@@ -14,6 +14,11 @@ Riferimento: risposte della grafica del 27/11/2026. Il tag `grafica-2026-11-27` 
    - Problema: la sezione ha fondo viola; #8383E5 sarebbe illeggibile.
    - Soluzione: resta bianco.
 
+3. Valori desktop fra 861 e 1200px
+   - Indicazione: valori solo per il mobile.
+   - Problema: con i clamp esistenti a 861px i testi erano più piccoli che a 860px, es. titoli 43px contro 48px, didascalie 18px contro 24px.
+   - Soluzione: minimi dei clamp alzati ai valori mobile, didascalie e sottotitoli 24px fissi.
+
 ## Integrazioni (punti su cui la grafica non ha dato indicazioni)
 
 1. Card "Altro" del form senza mascotte: testo spostato in basso di 36px (28px icona + 8px gap) per allinearlo alle altre card.

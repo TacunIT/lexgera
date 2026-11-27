@@ -449,7 +449,7 @@ a#menu-5::before {
         margin: -30px -30px 0;
         width: calc(100% + 60px);
         display: flex;
-        align-items: center;
+        align-items: flex-start;   // icona allineata in alto con il microcopy
         justify-content: space-between;
         background: $viola;
         color: #ffffff;
@@ -462,7 +462,7 @@ a#menu-5::before {
         }
 
         .microcopy {
-            color: #ffffff;
+            color: $sfondo-chiaro;
             font-size: .75rem;
             padding-top: 0;        // annulla padding e filetto di .wrapper p
             border-top: none;
@@ -472,7 +472,12 @@ a#menu-5::before {
             width: 60px;
             height: 60px;
             padding: 10px;         // icona 40px centrata nel riquadro 60x60
+            box-sizing: border-box;   // 60x60 totali, padding compreso
+            flex-shrink: 0;
+            margin-left: auto;
+            object-fit: contain;      // icone non quadrate: intere e centrate
             background: rgba($sfondo-chiaro, .2);
+            border-radius: 12px;
         }
     }
 

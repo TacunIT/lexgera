@@ -2,7 +2,10 @@
     <title>{{ page.title }}</title>
     <meta charset="utf-8" />
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
-    <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icon/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icon/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icon/favicon-16x16.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/assets/icon/site.webmanifest' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
     <meta name="description" content="{{ page.excerpt }}" />
     <meta name="keyword" content="{{ page.keyword }}" />

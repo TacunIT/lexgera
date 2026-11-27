@@ -181,7 +181,7 @@ a#menu-5 {
     font-weight: 700;
 }
 
-// Icona come maschera: prende il colore del testo
+// Icona come maschera, riempita di bianco (grafica: senza contorno)
 a#menu-5::before {
     content: "";
     display: inline-block;
@@ -189,9 +189,9 @@ a#menu-5::before {
     height: 1rem;
     margin-right: .5rem;
     vertical-align: -0.15em;
-    background-color: currentColor;
-    -webkit-mask: url("../icon/telefono.svg") no-repeat center / contain;
-    mask: url("../icon/telefono.svg") no-repeat center / contain;
+    background-color: #fff;
+    -webkit-mask: url("../icon/telefono-pieno.svg") no-repeat center / contain;
+    mask: url("../icon/telefono-pieno.svg") no-repeat center / contain;
 }
 
 // Desktop stretto: voci più vicine, così non vanno a capo
